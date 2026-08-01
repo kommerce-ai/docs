@@ -1,0 +1,64 @@
+---
+title: "Add a brand"
+description: "Creating the brand, choosing who does the setup work, and sending the invite."
+---
+
+Open **Brands** at `/agency/brands` and click **Add a brand**.
+
+## Create the record
+
+Enter the brand name and email, optionally with a website. Supplying the website is worth it — it is what the AI prefill scrapes for the first two steps.
+
+Two ways to create:
+
+- **Add brand only** — creates the record without starting onboarding. The brand shows as **Discovered**.
+- **Start Onboarding** — creates the record and begins the process.
+
+Creating a brand under your agency also provisions its workspace: a member-only Slack channel, and the ClickUp space and Drive folder used later by [automations](/agency-wiki/automations).
+
+## Choose the preset
+
+This sets the default assignee for all three steps. You are choosing a starting point, not a permanent arrangement.
+
+<CardGroup cols={2}>
+  <Card title="Let the brand do it" icon="envelope">
+    Every step assigned to the brand. An invite goes out and you watch progress through live review.
+  </Card>
+  <Card title="You do it for the brand" icon="user-gear">
+    Every step assigned to your agency. You can still send the invite and hand back individual steps.
+  </Card>
+</CardGroup>
+
+<Tip>
+  The most reliable split in practice is **you take Brand details and Products & assets, the brand takes Connect Meta**. The first two are work you can do faster from the website scrape; the third is the only one the brand genuinely has to do themselves, because it happens inside their own Business Manager.
+</Tip>
+
+## The invite
+
+The brand receives an invite linking to a signup URL carrying a one-time code. Signing up through that link binds their account to your agency.
+
+A brand that signs up **without** the code lands as a self-serve brand under the house agency, not under you. If a client tells you they signed up but you cannot see them in your Brands list, this is almost always why.
+
+<Warning>
+  Send the invite from Kommerce rather than telling a client to "just sign up". The code is what creates the link between their account and your agency, and there is no clean way to re-parent an account that signed up standalone.
+</Warning>
+
+## What the brand sees
+
+A brand only sees the steps assigned to it. If you kept **Brand details** and **Products & assets**, their onboarding shows one step, not three — which is the point of the split.
+
+## Watching progress
+
+Live review shows each step's status and who it is waiting on, so you can see a stall without asking. The usual stall is [Connect Meta](/agency-wiki/onboarding/meta-access) — it is the one step you cannot do for them and the one with an external dependency.
+
+## Brand status in the list
+
+| Status | Meaning |
+| --- | --- |
+| **Discovered** | Added, onboarding not started |
+| **Processing** | Onboarding underway |
+| **Completed** / **Fully onboarded** | All three steps done |
+
+<Note>
+  "Fully onboarded" means intake is complete — not that the brand is safe to spend. That is a separate gate. See [Launch readiness](/agency-wiki/onboarding/launch-readiness).
+</Note>

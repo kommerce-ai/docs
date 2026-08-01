@@ -1,0 +1,73 @@
+---
+title: "Meta access"
+description: "The one step you can't do for the brand — partner access, verification, and why it stalls."
+---
+
+Connect Meta ad account is the step that blocks onboarding most often. It has no AI draft, it happens inside the brand's own Business Manager, and it only completes when the server can independently verify it.
+
+## How it works
+
+<Steps>
+  <Step title="The brand copies your agency ID">
+    Kommerce shows your agency's Business Manager ID with a copy button.
+  </Step>
+  <Step title="The brand grants partner access in Meta">
+    In their own Business Manager, scoped to the ad account, page, and pixel. They stay the owner; you get management partner access; they can revoke it at any time.
+  </Step>
+  <Step title="The brand enters their own ad account ID">
+    In the form `act_<id>`, taken from their Business Manager.
+  </Step>
+  <Step title="Kommerce verifies">
+    A live call using **your agency's** Meta credentials checks whether that ad account now appears in your accessible client accounts.
+  </Step>
+</Steps>
+
+On success the step completes and the Meta readiness items flip to verified. On failure the step stays `submitted` and the brand can retry.
+
+## Why verification is server-side
+
+The brand only ever submits their own ad account ID. The lookup runs against your credentials on the server, and your list of other clients' ad accounts is **never returned to them**.
+
+This is the reason the flow looks slightly awkward — it would be simpler to show the brand a picker of accounts you can access, and that would leak your entire client list.
+
+## The uniqueness guard
+
+An ad account can be linked to **at most one brand**. Verification rejects an ID already linked elsewhere.
+
+<Warning>
+  This guard is doing real work. A successful lookup only proves the ID is in your agency's shared list — it does **not** prove this particular brand owns it. Without uniqueness, brand A could claim brand B's account by entering its ID. If a brand hits this rejection, investigate rather than unlinking the other brand.
+</Warning>
+
+{/* SCREENSHOT — shared with brands · connect-meta. Capture per images/CAPTURE-LIST.md, then delete these two comment markers.
+<Frame caption="The Meta screen your client is working in. Worth knowing by sight — most stalls are a wrong ID pasted here, or the partner added without the ad account assigned.">
+  <img src="/images/onboarding/connect-meta-partner-access.png" alt="Meta Business Manager partner access screen with an agency added and the ad account being assigned" />
+</Frame>
+*/}
+
+## When it stalls
+
+The two failure messages are unhelpfully similar, so work through causes in this order:
+
+| Cause | How to tell | Fix |
+| --- | --- | --- |
+| Access granted to the wrong Business Manager | Most common by far | Have them re-check the agency ID they pasted against the one Kommerce shows |
+| Not yet propagated | Granted moments ago | Wait and retry |
+| Wrong ad account ID | They pasted a page or business ID | It must be the ad account, `act_` prefixed |
+| Already linked to another brand | Explicit rejection | Find the other brand; do not unlink blindly |
+| Access granted, then revoked | Previously worked | Check partner access still exists in their BM |
+
+## Credentials are not interchangeable
+
+Worth internalising before you debug a publish failure later.
+
+A credential is **an actor, a set of scopes, and the specific assets it can touch**. A per-brand OAuth connection and your agency system-user token are different credentials even for the same Meta login, and they frequently differ on which **Pages** they can act as.
+
+Verification here checks ad-account access. It does **not** check Page access — and creating an ad creative publishes *as the Page*. So a brand can pass this step cleanly and still fail at publish time.
+
+<Note>
+  If a brand verified fine during onboarding but publishing later fails at the ad creative step, that is this asymmetry, not a regression. See [Media buying](/agency-wiki/media-buying#when-publishing-fails).
+</Note>
+
+## What this step produces
+
+Completing it flips four readiness items toward verified: Meta partner access, Meta ad account, business verification, and payment method — which is why it moves the launch-readiness picture more than any other single action.

@@ -1,0 +1,58 @@
+---
+title: "Daily and weekly reporting"
+description: "What a pulse contains, the interactive report, and how brands see their own numbers."
+---
+
+Reporting in Kommerce comes in three shapes: a scheduled pulse that arrives in Slack, an interactive report you interrogate, and in-app performance the brand can look at themselves.
+
+For how to build and schedule a pulse, see [Automations](/agency-wiki/automations). This page is about what goes in one.
+
+## The daily pulse
+
+The daily pulse always produces the same three sections. The fixed shape is the point — a standing update people actually read is one they can skim in the same order every day.
+
+<Steps>
+  <Step title="What we're working on">
+    Assembled from the brand's ClickUp tasks and Slack activity over the window.
+  </Step>
+  <Step title="Results">
+    Meta performance for the brand's linked ad account.
+  </Step>
+  <Step title="Agenda">
+    What needs attention or a decision.
+  </Step>
+</Steps>
+
+Data is gathered deterministically before anything is written, then composed into the three sections. The numbers are pulled, not recalled.
+
+## The free-form pulse
+
+Anything that isn't the standard three sections — a Friday CAC readout, a weekly performance summary, a channel-specific digest — is a **Post to Slack channel** automation with your own prompt.
+
+Use free-form when the shape is specific to a client. Use the daily pulse when you want the same format across the portfolio.
+
+<Tip>
+  A weekly CAC readout is usually more valuable to a brand than a daily one. Daily numbers on a modest budget are mostly noise, and a daily pulse that reports noise trains people to stop reading it.
+</Tip>
+
+## The interactive report
+
+`/marketing-report` is a brand audit you can question rather than a metrics dashboard. It covers positioning, competitor gaps, and persona priority.
+
+This is the same surface described in [Angle research](/agency-wiki/angle-research) — reporting and angle research are the same artifact used for different purposes.
+
+## What brands see themselves
+
+A brand's home surface shows performance for their linked Meta account, with an adjustable reporting window. They can change the window; they cannot change the linked account without you.
+
+## Attribution caveats worth stating to clients
+
+These are worth raising before a client raises them with you:
+
+- **Performance figures are Meta's own attribution.** They are not the store's numbers.
+- **If Shopify or GA4 is connected and Meta-reported purchases diverge from the store by more than roughly 25%, treat that as a tracking problem, not a reporting one.** Every optimisation decision made on top of that gap is unreliable.
+- **A pixel that stopped firing looks exactly like a campaign that stopped working.** Check the [Meta audit's](/agency-wiki/meta-audit) Signal grade before concluding performance dropped.
+
+<Warning>
+  Do not send a performance report for an account whose Meta audit grades Signal as Red. The numbers in it are measured against broken tracking, and reporting them as fact is worse than reporting nothing.
+</Warning>

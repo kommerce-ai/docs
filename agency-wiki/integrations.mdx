@@ -1,0 +1,66 @@
+---
+title: "Integrations"
+description: "Connect Meta, Shopify, Slack, ClickUp, and Google once at the agency level, then link them per brand."
+---
+
+Integrations are connected at the **agency** level and linked **per brand**. Brand users cannot connect integrations themselves — if a brand needs one changed, the agency does it.
+
+Open **Integrations** at `/integrations`.
+
+## What connects
+
+| Integration | What it powers |
+| --- | --- |
+| **Meta Ads Manager** | Campaign publishing, performance data, the [Meta audit](/agency-wiki/meta-audit) |
+| **Shopify** | Store and product data; revenue reconciliation against Meta-reported purchases |
+| **Slack** | [Automation delivery](/agency-wiki/reporting) and the daily pulse's activity section |
+| **ClickUp** | The work-in-progress section of the daily pulse |
+| **Google Ads** | Google campaign data |
+| **Google Analytics** | Site analytics |
+| **Google Drive** | Asset storage |
+| **Gmail** | Email |
+
+## Two levels
+
+This trips people up, so it is worth being explicit.
+
+<Steps>
+  <Step title="Connect at the agency">
+    Authorise the provider once for the agency. This creates the credential.
+  </Step>
+  <Step title="Link per brand">
+    Point each brand at its specific Slack channel, ClickUp space, Drive folder, and Meta ad account. Under **Settings → Integrations → Workspace channels**.
+  </Step>
+</Steps>
+
+Connecting Slack for the agency does **not** mean any brand's pulse can read a channel. The channel has to be linked to the brand, and the bot has to be in it.
+
+## Verifying a brand's links
+
+Each brand's linked channels and spaces can be verified from the same surface. Verification calls the provider and returns one of:
+
+| Result | Meaning | Fix |
+| --- | --- | --- |
+| `ok` | Reachable | — |
+| `needs invite` | The bot is not in the channel | Invite the bot, re-verify |
+| `not found` | The channel or space does not exist or is not visible | Check the ID |
+
+<Warning>
+  `needs invite` is the single most common cause of an empty daily pulse. Slack returns nothing for a channel the bot is not in, so the section degrades to a note rather than raising an error — it fails quietly.
+</Warning>
+
+## Meta credentials
+
+Meta is the one worth understanding in detail, because two credentials for the same Meta login are not equivalent.
+
+A credential is **an actor, a set of scopes, and the specific assets it can touch**. A per-brand OAuth connection and an agency system-user token are different credentials even for the same business, and they frequently differ on which **Pages** they may act as.
+
+This matters at publish time: creating an ad creative publishes *as the Page* and needs a task on that Page. A credential with full ad-account access but no Page access will create campaigns and ad sets successfully, then fail on the creative.
+
+<Note>
+  If publishing fails partway with an unhelpful error, this asymmetry is the first thing to check. See [Media buying](/agency-wiki/media-buying#when-publishing-fails).
+</Note>
+
+## Revocation
+
+Brands grant Meta partner access from their own Business Manager and can revoke it at any time. If a brand's campaigns suddenly fail to publish or their audit returns no data, check whether partner access is still in place before debugging anything in Kommerce.

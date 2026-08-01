@@ -1,0 +1,74 @@
+---
+title: "Brand Brain"
+description: "The per-brand knowledge base — what it is, what's live today, and what isn't yet."
+---
+
+<Warning>
+  **Not yet available to use.** Brand Brain is partially built. The document store runs in the background, but there is no user-facing surface — the **AI Brain** tab is disabled pending its graph backend, and retrieval, the wiki, and citations have not shipped. This page describes the design and its current state so you can answer questions about it. It is not a how-to.
+</Warning>
+
+## The problem it solves
+
+Kommerce already produces substantial brand knowledge and then loses most of it. Meta audits, uploaded brand books and guideline PDFs, personas, creative guardrails, competitor research — all of it exists, and almost none of it reaches the agent when you ask a question.
+
+Uploaded documents are the clearest case: a brand book gets compressed once into a fixed set of fields during onboarding, and the original is never read again. Everything in it that did not fit those fields is gone.
+
+Brand Brain is the fix — a per-brand corpus the agent can actually query, with citations, instead of a fixed bundle pushed into every conversation.
+
+## The intended design
+
+A per-brand knowledge base held as documents in a shared Google Drive folder, projected into Kommerce, maintained as an interlinked wiki, and retrieved by [Kenny](/agency-wiki/kenny) through a budgeted surface.
+
+Two things about the design are worth knowing because they explain its shape:
+
+**Drive is the shared workspace.** Agency and client work in the same folder. Kommerce publishes its own generated artefacts — audits, reports, briefs — back into it, so the corpus grows from both sides.
+
+**Slack and ClickUp are deliberately excluded** as document sources. One active Slack channel would consume between one and five times a brand's entire corpus budget on its own. That activity reaches the brain through the [daily and weekly pulse](/agency-wiki/reporting) instead, already summarised.
+
+## What is actually live
+
+| Component | Status |
+| --- | --- |
+| Document store | **Live** — running in the background |
+| Competitor research captured as documents | **Live** |
+| Chunking and embeddings | Not shipped |
+| Entity graph | Not shipped |
+| The wiki layer | Not shipped |
+| Retrieval with citations | Not shipped |
+| **AI Brain** tab in the UI | **Disabled** |
+
+The document store is the foundation phase. It gives every unit of brand knowledge a stable identity so later phases have something to build on — but on its own it changes nothing you can see.
+
+<Note>
+  Documents are **tombstoned, never deleted**. Once the wiki layer exists, pages will cite documents by ID, and a hard delete would leave citations pointing at nothing with no way to render "source removed".
+</Note>
+
+## Why the AI Brain tab is off
+
+The tab is hidden in the navigation and force-disabled on the report surface. A stale `?tab=brain` URL is redirected to Overview rather than loading.
+
+The reason is its graph backend, which was returning errors. The tab is commented out rather than removed, so restoring it is a small change once that backend is available — but until then it is genuinely off, not merely hidden.
+
+<Warning>
+  If a client asks about "the AI Brain" because they saw it mentioned, tell them it is not yet available. Do not point them at a `?tab=brain` URL — it will not work.
+</Warning>
+
+## What to do in the meantime
+
+The corpus will be built from material that already exists, so quality now compounds later:
+
+<Steps>
+  <Step title="Keep brand guides genuinely complete">
+    The brand guide is the highest-value document in any brand's corpus. See [Angle research](/agency-wiki/angle-research) for why thin context degrades everything downstream.
+  </Step>
+  <Step title="Upload the real source documents">
+    Brand books, guideline PDFs, and strategy docs. Today only a compressed subset is used, but the originals are what the corpus will eventually draw on.
+  </Step>
+  <Step title="Keep Drive organised per brand">
+    The shared Drive folder is the intended ingest surface, so structure you impose now is structure the brain inherits.
+  </Step>
+</Steps>
+
+## What works today instead
+
+For grounded answers about a brand right now, use [Kenny](/agency-wiki/kenny). He reads brand context, personas, products, and the brand guide, and takes a live snapshot of the page you are on. That is the working retrieval path — narrower than Brand Brain intends to be, but real.

@@ -1,55 +1,166 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Kommerce",
+  "description": "Documentation for Kommerce — your AI brand department, installed in a week.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#00071A",
+    "light": "#EAFF5E",
+    "dark": "#00071A"
   },
-  "favicon": "/favicon.svg",
+  "fonts": {
+    "family": "Inter"
+  },
+  "favicon": "/favicon.ico",
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "public": true,
+            "pages": [
+              "index",
+              "quickstart"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Agency wiki",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "agency-wiki/overview",
+              "agency-wiki/roles-and-access"
+            ]
+          },
+          {
+            "group": "Onboarding",
+            "pages": [
+              "agency-wiki/onboarding/overview",
+              "agency-wiki/onboarding/add-a-brand",
+              "agency-wiki/onboarding/meta-access",
+              "agency-wiki/onboarding/launch-readiness"
+            ]
+          },
+          {
+            "group": "The five jobs",
+            "pages": [
+              "agency-wiki/angle-research",
+              {
+                "group": "Creative production",
+                "pages": [
+                  "agency-wiki/creative/overview",
+                  "agency-wiki/creative/image-generation",
+                  "agency-wiki/creative/video-generation"
+                ]
+              },
+              "agency-wiki/meta-audit",
+              "agency-wiki/media-buying",
+              "agency-wiki/reporting"
+            ]
+          },
+          {
+            "group": "Intelligence",
+            "pages": [
+              "agency-wiki/kenny",
+              "agency-wiki/brand-brain"
+            ]
+          },
+          {
+            "group": "Agency operations",
+            "pages": [
+              "agency-wiki/skills",
+              "agency-wiki/automations",
+              "agency-wiki/integrations",
+              "agency-wiki/credits"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Brands wiki",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "brands-wiki/overview",
+              "brands-wiki/brand-guide"
+            ]
+          },
+          {
+            "group": "Onboarding",
+            "pages": [
+              "brands-wiki/onboarding/overview",
+              "brands-wiki/onboarding/brand-details",
+              "brands-wiki/onboarding/products-and-assets",
+              "brands-wiki/onboarding/connect-meta",
+              "brands-wiki/onboarding/launch-checklist"
+            ]
+          },
+          {
+            "group": "Your workspace",
+            "pages": [
+              {
+                "group": "Creative production",
+                "pages": [
+                  "brands-wiki/creative/overview",
+                  "brands-wiki/creative/image-generation",
+                  "brands-wiki/creative/video-generation"
+                ]
+              },
+              "brands-wiki/media-buying",
+              "brands-wiki/reporting"
+            ]
+          },
+          {
+            "group": "Intelligence",
+            "pages": [
+              "brands-wiki/kenny",
+              "brands-wiki/brand-brain"
+            ]
+          }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+    ]
+  },
+  "redirects": [
+    {
+      "source": "/agency-wiki",
+      "destination": "/agency-wiki/overview"
+    },
+    {
+      "source": "/brands-wiki",
+      "destination": "/brands-wiki/overview"
+    },
+    {
+      "source": "/agency-wiki/onboard-a-brand",
+      "destination": "/agency-wiki/onboarding/add-a-brand"
+    },
+    {
+      "source": "/agency-wiki/creative-production",
+      "destination": "/agency-wiki/creative/overview"
+    },
+    {
+      "source": "/brands-wiki/creative-production",
+      "destination": "/brands-wiki/creative/overview"
+    },
+    {
+      "source": "/product/agency/onboard-a-brand",
+      "destination": "/agency-wiki/onboarding/add-a-brand"
+    },
+    {
+      "source": "/product/agency/:slug*",
+      "destination": "/agency-wiki/:slug*"
+    },
+    {
+      "source": "/product/brand/:slug*",
+      "destination": "/brands-wiki/:slug*"
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
-  },
+  ],
   "contextual": {
     "options": [
       "copy",
@@ -64,9 +175,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://usekommerce.com",
+      "github": "https://github.com/kommerce-ai"
     }
   }
 }
