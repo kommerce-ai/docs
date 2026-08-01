@@ -2,6 +2,11 @@
 # .git, .github, .claude, .agents, .idea, node_modules,
 # README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md
 
+# AGENTS.md is NOT in that auto-ignored list, and without this rule it deploys
+# as a public page at /AGENTS — internal content boundaries and all. Verified
+# on a preview build. Do not remove.
+AGENTS.md
+
 # Draft content
 drafts/
 *.draft.mdx
