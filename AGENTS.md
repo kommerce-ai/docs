@@ -14,7 +14,8 @@
 ## Terminology
 
 - **Department** — the Kommerce system as a whole. It is "installed", not "signed up for".
-- **Operator** — the human assigned to an account. Not "account manager" or "rep".
+- **Operator** — the party running accounts on the brand's behalf, and also the individual human assigned to an account. Not "agency", "account manager" or "rep". The operator side is documented at `/operator-wiki`, the brand side at `/brands-wiki`.
+- **Do not say "agency"** in published copy. The one exception is the product's own control labelled **Copy agency ID** in the Meta connection flow — quote that label verbatim, because renaming it in the docs would contradict what the user sees on screen. If the product UI is ever renamed, drop the exception.
 - **The five jobs** — angle research, copywriting, creative production, media buying, weekly reporting. Refer to them as jobs, not "features" or "modules".
 - **Angle** — a claim, audience, or positioning hypothesis worth testing.
 - Say **brand**, not "client" or "customer account".
@@ -33,7 +34,7 @@
 
 Full workflow and the outstanding shot list live in `images/CAPTURE-LIST.md` (not published).
 
-- **Both wikis are public with no authentication.** Capture from a demo brand with fabricated data — never a live client account. Brands can read the agency wiki, so a real portfolio screenshot leaks one client's figures to another and to the open internet.
+- **Both wikis are public with no authentication.** Capture from a demo brand with fabricated data — never a live client account. Brands can read the operator wiki, so a real portfolio screenshot leaks one client's figures to another and to the open internet.
 - Check every frame for client names, spend/revenue/ROAS figures, Meta account or pixel IDs, member emails, and browser chrome before committing.
 - Files live in `images/<subject>/` — `onboarding`, `creative`, `media-buying`, `meta-audit`. Organised by subject, not by wiki, because most surfaces are identical for both roles and one file serves both pages.
 - Root-relative paths only: `/images/creative/foo.png`. Relative paths are unsupported.

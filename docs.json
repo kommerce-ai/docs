@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Kommerce",
-  "description": "Documentation for Kommerce — your AI brand department, installed in a week.",
+  "description": "Documentation for Kommerce \u2014 your AI brand department, installed in a week.",
   "colors": {
     "primary": "#00071A",
     "light": "#EAFF5E",
@@ -12,6 +12,10 @@
     "family": "Inter"
   },
   "favicon": "/favicon.ico",
+  "logo": {
+    "light": "/logo/wordmark-light.png",
+    "dark": "/logo/wordmark-dark.png"
+  },
   "navigation": {
     "tabs": [
       {
@@ -28,55 +32,55 @@
         ]
       },
       {
-        "tab": "Agency wiki",
+        "tab": "Operator wiki",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
-              "agency-wiki/overview",
-              "agency-wiki/roles-and-access"
+              "operator-wiki/overview",
+              "operator-wiki/roles-and-access"
             ]
           },
           {
             "group": "Onboarding",
             "pages": [
-              "agency-wiki/onboarding/overview",
-              "agency-wiki/onboarding/add-a-brand",
-              "agency-wiki/onboarding/meta-access",
-              "agency-wiki/onboarding/launch-readiness"
+              "operator-wiki/onboarding/overview",
+              "operator-wiki/onboarding/add-a-brand",
+              "operator-wiki/onboarding/meta-access",
+              "operator-wiki/onboarding/launch-readiness"
             ]
           },
           {
             "group": "The five jobs",
             "pages": [
-              "agency-wiki/angle-research",
+              "operator-wiki/angle-research",
               {
                 "group": "Creative production",
                 "pages": [
-                  "agency-wiki/creative/overview",
-                  "agency-wiki/creative/image-generation",
-                  "agency-wiki/creative/video-generation"
+                  "operator-wiki/creative/overview",
+                  "operator-wiki/creative/image-generation",
+                  "operator-wiki/creative/video-generation"
                 ]
               },
-              "agency-wiki/meta-audit",
-              "agency-wiki/media-buying",
-              "agency-wiki/reporting"
+              "operator-wiki/meta-audit",
+              "operator-wiki/media-buying",
+              "operator-wiki/reporting"
             ]
           },
           {
             "group": "Intelligence",
             "pages": [
-              "agency-wiki/kenny",
-              "agency-wiki/brand-brain"
+              "operator-wiki/kenny",
+              "operator-wiki/brand-brain"
             ]
           },
           {
-            "group": "Agency operations",
+            "group": "Operator operations",
             "pages": [
-              "agency-wiki/skills",
-              "agency-wiki/automations",
-              "agency-wiki/integrations",
-              "agency-wiki/credits"
+              "operator-wiki/skills",
+              "operator-wiki/automations",
+              "operator-wiki/integrations",
+              "operator-wiki/credits"
             ]
           }
         ]
@@ -129,8 +133,8 @@
   },
   "redirects": [
     {
-      "source": "/agency-wiki",
-      "destination": "/agency-wiki/overview"
+      "source": "/operator-wiki",
+      "destination": "/operator-wiki/overview"
     },
     {
       "source": "/brands-wiki",
@@ -138,11 +142,27 @@
     },
     {
       "source": "/agency-wiki/onboard-a-brand",
-      "destination": "/agency-wiki/onboarding/add-a-brand"
+      "destination": "/operator-wiki/onboarding/add-a-brand"
     },
     {
       "source": "/agency-wiki/creative-production",
-      "destination": "/agency-wiki/creative/overview"
+      "destination": "/operator-wiki/creative/overview"
+    },
+    {
+      "source": "/agency-wiki",
+      "destination": "/operator-wiki/overview"
+    },
+    {
+      "source": "/agency-wiki/:slug*",
+      "destination": "/operator-wiki/:slug*"
+    },
+    {
+      "source": "/operator-wiki/onboard-a-brand",
+      "destination": "/operator-wiki/onboarding/add-a-brand"
+    },
+    {
+      "source": "/operator-wiki/creative-production",
+      "destination": "/operator-wiki/creative/overview"
     },
     {
       "source": "/brands-wiki/creative-production",
@@ -150,11 +170,11 @@
     },
     {
       "source": "/product/agency/onboard-a-brand",
-      "destination": "/agency-wiki/onboarding/add-a-brand"
+      "destination": "/operator-wiki/onboarding/add-a-brand"
     },
     {
       "source": "/product/agency/:slug*",
-      "destination": "/agency-wiki/:slug*"
+      "destination": "/operator-wiki/:slug*"
     },
     {
       "source": "/product/brand/:slug*",

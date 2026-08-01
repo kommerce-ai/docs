@@ -19,7 +19,7 @@ Media Buying covers the path from approved creative to entities in Meta Ads Mana
 
 <Steps>
   <Step title="Select or generate creatives">
-    Pick assets from the brand's library, or generate new ones inline. This is the same creative pipeline described in [Creative production](/agency-wiki/creative/overview).
+    Pick assets from the brand's library, or generate new ones inline. This is the same creative pipeline described in [Creative production](/operator-wiki/creative/overview).
   </Step>
   <Step title="Ad set and ad review">
     Set the budget mode, targeting, and copy, then approve each ad. This is the step that decides how the campaign learns.
@@ -39,7 +39,7 @@ Media Buying covers the path from approved creative to entities in Meta Ads Mana
 
 This is where the real decisions happen.
 
-**Budget mode** — choose CBO (campaign-level budget) or ABO (ad-set-level budgets). The choice interacts with the Structure dimension of the [Meta audit](/agency-wiki/meta-audit): fragmenting a modest budget across many ad sets is the most common structural failure it flags.
+**Budget mode** — choose CBO (campaign-level budget) or ABO (ad-set-level budgets). The choice interacts with the Structure dimension of the [Meta audit](/operator-wiki/meta-audit): fragmenting a modest budget across many ad sets is the most common structural failure it flags.
 
 **Targeting** — age, location, and audience configuration per ad set.
 
@@ -51,16 +51,16 @@ Each ad is approved individually. Unapproved ads do not publish.
 
 ## Managing a live campaign
 
-Once published, open the campaign from the campaigns list to manage it. Agency users can also work across accounts from **Meta Ads** at `/meta-ads`.
+Once published, open the campaign from the campaigns list to manage it. Operator users can also work across accounts from **Meta Ads** at `/meta-ads`.
 
 ## Linking the Meta account
 
 A brand needs a Meta ad account linked before anything can publish. The brand's home surface shows the linked account and lets you change it.
 
-The brand grants **partner access** to your agency's Business Manager directly in Meta, then enters its own ad account ID and clicks **Verify**. Kommerce checks server-side whether that account now appears in your agency's accessible client accounts.
+The brand grants **partner access** to your Business Manager directly in Meta, then enters its own ad account ID and clicks **Verify**. Kommerce checks server-side whether that account now appears in your accessible client accounts.
 
 <Note>
-  The brand only ever submits its own ad account ID. Your agency's list of other clients' accounts is never exposed to them — the lookup happens server-side.
+  The brand only ever submits its own ad account ID. Your list of other clients' accounts is never exposed to them — the lookup happens server-side.
 </Note>
 
 An ad account can be linked to **at most one brand**. If verification rejects an ID as already linked, that is the anti-hijack guard doing its job, not a bug.
@@ -86,11 +86,11 @@ If a publish fails after the campaign has been created, Kommerce rolls back and 
 
 ## Acting on audit findings
 
-The [Meta audit](/agency-wiki/meta-audit) is read-only and will never change the account for you. Its actions map to surfaces here:
+The [Meta audit](/operator-wiki/meta-audit) is read-only and will never change the account for you. Its actions map to surfaces here:
 
 | Finding | Where you fix it |
 | --- | --- |
 | Fragmented structure | Budget mode and ad set setup in Step 2 |
-| Stale creative | [Creative production](/agency-wiki/creative/overview), then a new campaign |
+| Stale creative | [Creative production](/operator-wiki/creative/overview), then a new campaign |
 | Spend below the kill line | Ads Manager — pause the offenders |
 | Broken pixel | Meta Events Manager, outside Kommerce |

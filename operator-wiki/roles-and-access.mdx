@@ -7,8 +7,8 @@ Kommerce has three account types. Which one you have determines your entire navi
 
 | Account type | Who it is | Scope |
 | --- | --- | --- |
-| `agency` | The agency owner | Every brand in the agency, plus agency-level configuration |
-| `agency_member` | A team member at the agency | Same workspace as the owner, subject to member permissions |
+| `agency` | The operator owner | Every brand in the portfolio, plus operator-level configuration |
+| `agency_member` | A team member on the operator team | Same workspace as the owner, subject to member permissions |
 | `brand` | A brand operating its own account | One brand — their own |
 
 ## What each account sees
@@ -16,8 +16,8 @@ Kommerce has three account types. Which one you have determines your entire navi
 The sidebar is the clearest expression of the difference.
 
 <CardGroup cols={2}>
-  <Card title="Agency sidebar" icon="building">
-    **Home** → the agency home
+  <Card title="Operator sidebar" icon="building">
+    **Home** → the operator home
 
     **Brands** → the brand list, expanding to a per-brand submenu:
     - Media Buying
@@ -44,28 +44,28 @@ The sidebar is the clearest expression of the difference.
   </Card>
 </CardGroup>
 
-Brand users get the four workspace items as flat top-level rows, because there is no agency/brand mode to nest them under — they are always in their own brand's context.
+Brand users get the four workspace items as flat top-level rows, because there is no operator/brand mode to nest them under — they are always in their own brand's context.
 
-## Agency-only features
+## Operator-only features
 
 These are hidden from brand accounts entirely:
 
 - **Skills** — the house-procedure library
 - **Automations** — scheduled reports and pulses
 - **Integrations** — connecting Meta, Slack, Shopify, ClickUp, and the rest
-- **Settings** — agency configuration, members, workspace channels
-- **Credits** — the agency credit wallet
+- **Settings** — operator configuration, members, workspace channels
+- **Credits** — the operator credit wallet
 - **The Brands list** — brand accounts have exactly one brand and never see a picker
 
 <Note>
-  Integrations and Settings are agency-level by design. A brand user cannot connect their own Meta account from inside Kommerce — the agency connects it on their behalf. If you are a brand user who needs an integration changed, ask your agency.
+  Integrations and Settings are operator-level by design. A brand user cannot connect their own Meta account from inside Kommerce — the operator connects it on their behalf. If you are a brand user who needs an integration changed, ask your operator.
 </Note>
 
-## Brand context and the agency "view as brand" mode
+## Brand context and the operator "view as brand" mode
 
-Agency users move between brands constantly, so most brand-scoped pages carry a `brandId` in the URL. When an agency user opens the chat home with a brand selected, the sidebar switches into the **brand portal** shape — the same layout a brand user sees.
+Operator users move between brands constantly, so most brand-scoped pages carry a `brandId` in the URL. When an operator user opens the chat home with a brand selected, the sidebar switches into the **brand portal** shape — the same layout a brand user sees.
 
-This is deliberate: it lets an agency operator see the workspace the way their client sees it. The agency footer (Skills, Automations, Integrations, Settings) is hidden in that mode.
+This is deliberate: it lets an operator see the workspace the way their client sees it. The operator footer (Skills, Automations, Integrations, Settings) is hidden in that mode.
 
 Kommerce also remembers the last brand workspace you were in and offers a shortcut back to it from the sidebar.
 
@@ -76,7 +76,7 @@ Kommerce also remembers the last brand workspace you were in and offers a shortc
 ## Where to go next
 
 <CardGroup cols={2}>
-  <Card title="Agency guide" icon="building" href="/agency-wiki/overview">
+  <Card title="Operator guide" icon="building" href="/operator-wiki/overview">
     Running multiple brands, skills, automations, and integrations.
   </Card>
   <Card title="Brand guide" icon="store" href="/brands-wiki/overview">

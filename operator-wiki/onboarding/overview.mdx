@@ -33,12 +33,12 @@ What you see in the UI is derived from status and assignee:
 | --- | --- |
 | **This step needs you** | Assigned to you, not finished |
 | **We drafted this — review** | AI prefilled it; someone needs to check it |
-| **Waiting on brand** / **Waiting on agency** | Assigned to the other party |
+| **Waiting on brand** / **Waiting on operator** | Assigned to the other party |
 | **Done** | Complete |
 
 ## Who does the work
 
-Every step has an assignee — `brand` or `agency` — set from a preset when you add the brand, and switchable per step afterwards.
+Every step has an assignee — `brand` or `operator` — set from a preset when you add the brand, and switchable per step afterwards.
 
 <Note>
   Assignment can be changed on any step that is **not yet complete**. A completed step is locked; the server rejects reassignment rather than silently reopening it. Reassign before it finishes, or reopen the step first.
@@ -61,7 +61,7 @@ This is the part people conflate, and it matters because one of them is the go-l
 
 They are tracked separately because finishing the steps is not the same as being safe to spend. A brand can be intake-complete and still not launch-ready — most commonly because business verification or a payment method has not landed.
 
-See [Launch readiness](/agency-wiki/onboarding/launch-readiness) for the full ledger.
+See [Launch readiness](/operator-wiki/onboarding/launch-readiness) for the full ledger.
 
 ## Progress
 
@@ -73,13 +73,13 @@ It deliberately does not blend in readiness items. Connect Meta alone produces f
 
 <CardGroup cols={2}>
   <Card title="Managed service" icon="building">
-    You add the brand. It lands under your agency, gets an invite code and a member-only Slack channel, and follows your chosen preset.
+    You add the brand. It lands under your portfolio, gets an invite code and a member-only Slack channel, and follows your chosen preset.
   </Card>
   <Card title="Self-serve" icon="user">
-    The brand signs up directly. It lands under the house agency, every step is assigned to the brand, and no Slack channel is provisioned.
+    The brand signs up directly. It lands under the house operator, every step is assigned to the brand, and no Slack channel is provisioned.
   </Card>
 </CardGroup>
 
-<Card title="Next: Add a brand" icon="arrow-right" href="/agency-wiki/onboarding/add-a-brand">
+<Card title="Next: Add a brand" icon="arrow-right" href="/operator-wiki/onboarding/add-a-brand">
   The actual mechanics of bringing one on.
 </Card>
