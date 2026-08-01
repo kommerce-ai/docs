@@ -1,0 +1,75 @@
+---
+title: "Automations"
+description: "Scheduled work — pulses and skill runs that fire on a cron and post without anyone remembering to run them."
+---
+
+An automation is a scheduled job attached to a brand. Open **Automations** at `/automations`. This is an agency-only surface.
+
+For what a reporting pulse actually contains, see [Daily and weekly reporting](/agency-wiki/reporting). This page covers the mechanics.
+
+## The three action types
+
+| Action | What it does |
+| --- | --- |
+| **Daily Slack pulse** | Gathers Meta, Slack, and ClickUp data and composes a fixed three-section update |
+| **Post to Slack channel** | Free-form. You write the prompt; Kommerce composes and posts it |
+| **Run a skill** | Runs a [skill](/agency-wiki/skills) on a schedule — a recurring audit, for instance |
+
+<Note>
+  In every case the agent **composes** and Kommerce **posts**. Delivery is not left to the model deciding to call a posting tool, and it always targets the channel you configured under the right connection.
+</Note>
+
+## Creating one
+
+<Steps>
+  <Step title="Pick the brand and action">
+    Each automation belongs to one brand.
+  </Step>
+  <Step title="Confirm the sources">
+    **Brand & knowledge sources** shows **detected sources** — derived from the brand's linked Slack channel, ClickUp space, and Meta account. Override per automation if needed.
+  </Step>
+  <Step title="Set schedule and timezone">
+    Both matter. A daily automation on the wrong timezone lands at the wrong hour for the client.
+  </Step>
+  <Step title="Set where it posts">
+    Pick from the brand's connected channels or enter a channel ID.
+  </Step>
+  <Step title="Run now, then check history">
+    Always test before trusting a schedule.
+  </Step>
+</Steps>
+
+## Prerequisites
+
+An automation will run and post something unhelpful — rather than fail loudly — if these aren't in place:
+
+- **Slack connected** at the agency, with the bot a **member of every channel it reads**
+- **ClickUp connected** with a provisioned space for the brand, for the work-in-progress section
+- **A Meta ad account linked** to the brand, for performance data
+
+Link and verify these per brand under **Settings → Integrations → Workspace channels**. See [Integrations](/agency-wiki/integrations).
+
+<Warning>
+  Sources are **fault-isolated**. If ClickUp is unreachable or the bot isn't in a Slack channel, that section degrades to a note and the automation still posts. This is good for reliability and bad for noticing — a section that is quietly always empty looks like a brand with nothing going on.
+</Warning>
+
+## Run history
+
+**Run history** records every run: what fired, what it posted, what failed.
+
+| Symptom | Usual cause |
+| --- | --- |
+| `Slack post failed` in history | Wrong channel, or the Slack connection is broken |
+| A section is always empty | The bot isn't in that channel, or ClickUp has no space linked |
+| Nothing ran at all | The automation is disabled, or the schedule and timezone don't mean what you think |
+| Posted at the wrong hour | Timezone |
+
+## Cadence
+
+Automations are evaluated on a short polling interval, so daily and weekly cadences land reliably. Missed windows are coalesced rather than replayed — a backlog will not produce a burst of duplicate posts.
+
+Runs are claimed so that a given window fires **at most once**, even if evaluation overlaps.
+
+<Tip>
+  Review your automations when a brand offboards. A pulse pointed at a channel nobody reads anymore still consumes an agent run on every fire, and that draws down [credits](/agency-wiki/credits).
+</Tip>

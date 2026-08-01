@@ -1,0 +1,69 @@
+---
+title: "Launch readiness"
+description: "The objective go-live gate — what's required, who owns it, and what you verify."
+---
+
+Launch readiness is a separate ledger from step completion. Steps *produce* readiness items; your agency *verifies* them. A brand is launch-ready only when every required item is verified.
+
+## The checklist
+
+<CardGroup cols={2}>
+  <Card title="Required — blocks launch" icon="lock">
+    - Logo
+    - Product photos
+    - Website access
+    - Meta partner access
+    - Business verification
+    - Meta ad account
+    - Payment method
+  </Card>
+  <Card title="Optional — never blocks" icon="lock-open">
+    - Product video
+    - Instagram
+    - Meta Pixel
+  </Card>
+</CardGroup>
+
+<Note>
+  **Every item is owned by the brand**, including business verification and payment method. There is nothing on this list your agency can supply on their behalf — which is why chasing it is the work, and why it is tracked explicitly rather than assumed.
+</Note>
+
+Meta Pixel being optional is worth a second look. It will not block launch, but a missing or misfiring pixel is the most common Red on the [Meta audit's](/agency-wiki/meta-audit) Signal dimension — and Signal Red makes every downstream number unreliable.
+
+## Item status
+
+```
+missing → received → verified
+```
+
+- **Missing** — not provided yet
+- **Received** — a step produced it; not yet confirmed
+- **Verified** — your agency confirmed it, or the server did
+
+Brand artifacts leave `missing` when their producing step completes. Meta items leave `missing` only once verification succeeds.
+
+## Still needed
+
+The **still needed** list is exactly the required items still sitting at `missing`. It is the chase list — work it directly rather than reading step statuses and inferring.
+
+<Tip>
+  Check still-needed before the kickoff call, not after. Business verification and payment method are the two items with real external latency — Meta's own verification can take days, and it is the most common reason a brand that "finished onboarding" cannot actually spend.
+</Tip>
+
+## Intake complete is not launch ready
+
+A brand showing **Fully onboarded** in the Brands list has finished all three steps. That is intake, not the go-live gate.
+
+The gap between them is almost always business verification or payment method — both required, both owned by the brand, and neither produced by simply completing a form in Kommerce.
+
+<Warning>
+  Do not schedule a launch date off "Fully onboarded". Check launch readiness, and specifically whether business verification is verified rather than received.
+</Warning>
+
+## Before you spend
+
+Once launch-ready, run a [Meta audit](/agency-wiki/meta-audit) before the first campaign — especially on an account with existing history. Its most common finding is broken tracking, and every optimisation made on top of that is wasted work.
+
+<Card title="Next: Angle research" icon="arrow-right" href="/agency-wiki/angle-research">
+  With the brand context in place, start finding the angle.
+</Card>

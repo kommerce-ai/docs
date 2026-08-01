@@ -1,0 +1,45 @@
+---
+title: "Credits"
+description: "How generation is metered, and how to keep brands topped up."
+---
+
+Kommerce meters the work that costs money to run — copy generation, image and video generation, and agent runs — and debits it from a credit balance.
+
+Open the wallet at `/agency/credits`.
+
+## The wallet
+
+The page shows your **agency balance** and lets you **add credits**, either from preset amounts or a **custom amount**.
+
+The billable unit is the **brand**. Usage is attributed to whichever brand the work was done for, so you can see where generation spend is going across the portfolio.
+
+## What consumes credits
+
+| Operation | Notes |
+| --- | --- |
+| **Creative generation** | The largest consumer. Cost scales with the size of your generation matrix. |
+| **Video generation** | Heavier per asset than images. |
+| **Agent runs** | Chat turns, audits, and skill runs. |
+| **Scheduled automations** | Each pulse composes a message, which is an agent run. |
+
+<Warning>
+  The creative studio multiplies: `angles × products × awareness levels × personas × variations`. Selecting every awareness level and a high variation count turns a single brief into a very large job. Check the count on the Templates step before you hit Create.
+</Warning>
+
+## Keeping balances healthy
+
+Balances are decremented as work completes and low-balance signals fire as you approach zero.
+
+Top-ups are **manual** — there is no auto-recharge. For brands running continuous generation, check the balance as part of your weekly rhythm rather than waiting for a failure.
+
+<Note>
+  Accounting is backed by an append-only ledger, and the displayed balance is derived from it. If a balance ever looks wrong, the ledger is the source of truth and the balance can be rebuilt from it — raise it rather than working around it.
+</Note>
+
+## Reducing spend
+
+The most effective lever is the brief, not the settings:
+
+- **Narrow the awareness levels.** Generating for all levels when you only intend to run one is the most common source of waste.
+- **Review the brief before generating.** A reviewed angle produces usable assets on the first pass; an unreviewed one produces a large batch you discard.
+- **Lower the variation count** while you are still exploring, and raise it once an angle is proven.

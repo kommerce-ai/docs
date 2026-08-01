@@ -1,0 +1,101 @@
+---
+title: "Meta audit"
+description: "A read-only diagnostic that grades a Meta ad account across four dimensions and ranks what to fix first."
+---
+
+The Meta audit is a diagnosis, not a discussion. It pulls the account's real numbers, grades four dimensions, and hands you a ranked action list where every claim carries a figure from the account.
+
+Open **Meta Audit** at `/meta-audit` and pick the brand.
+
+<Info>
+  **The audit never modifies anything.** It cannot create, update, pause, or activate. If it recommends an action, it tells you which surface to do it from — you make the change yourself.
+</Info>
+
+{/* SCREENSHOT — capture per images/CAPTURE-LIST.md, then delete these two comment markers.
+<Frame caption="The four dimensions with their grades and receipts. Signal is graded first because a Red there invalidates everything below it.">
+  <img src="/images/meta-audit/dimension-scorecard.png" alt="Audit scorecard grading Signal, Structure, Waste, and Creative with a one-line numeric receipt for each" />
+</Frame>
+*/}
+
+## The four dimensions
+
+They are graded in a fixed order, because upstream problems invalidate downstream conclusions.
+
+<Steps>
+  <Step title="Signal — is the tracking trustworthy?">
+    Pixel freshness and event quality. If Signal is Red, **every number below it is suspect** and the audit will say so.
+  </Step>
+  <Step title="Structure — is budget consolidated enough to learn?">
+    Fragmentation across ad sets, budget mode, and whether the account shape supports scale.
+  </Step>
+  <Step title="Waste — where is spend going that shouldn't?">
+    Spend sitting below the kill line past the learning window, zombie campaigns, abandoned winners.
+  </Step>
+  <Step title="Creative — is the pool fresh and diverse?">
+    Ad age, share of spend on stale creative, frequency, and hook rate.
+  </Step>
+</Steps>
+
+Each dimension gets a grade — **Green**, **Yellow**, **Red**, or **Blind** — and a one-line receipt.
+
+A receipt is a number, not a characterisation:
+
+> Waste — RED — $18,400 of last-90d spend sat below 1.3 ROAS past day 3, across 4 campaigns.
+
+**Blind** means the data for that dimension came back degraded. A verdict from partial data is legitimate; the audit will tell you what it could not see rather than guessing.
+
+## The ranked actions
+
+Below the scorecard sit up to five actions, ranked by expected impact. Each carries:
+
+- **Why** — the receipt that justifies it
+- **Expected** — the delta, tied to the number it came from
+
+Two rules govern the ranking, and they matter when you are deciding what to do Monday morning:
+
+1. **A downstream fix never outranks an upstream one that invalidates it.** A broken pixel outranks a creative rotation even when the creative delta looks larger, because the creative delta is measured against fiction.
+2. **One change per problem.** Each action is a hypothesis. Running two at once makes the cause unrecoverable.
+
+Fewer than five real findings means fewer than five actions. The audit does not pad.
+
+## Asking follow-ups
+
+The audit is chat-first. Three starters are offered:
+
+- *What's my biggest leak?*
+- *Which action should I approve first?*
+- *Where is my budget being wasted?*
+
+Ask it to explain a receipt, to justify a ranking, or to tell you what it could not measure.
+
+## Account type
+
+The audit judges eCom and lead-gen accounts differently:
+
+| Account type | Judged on | Notes |
+| --- | --- | --- |
+| **eCom** | ROAS against the kill line | Campaigns under the spend floor are ignored — a 9× ROAS on $40 is noise, not signal |
+| **Lead-gen** | Cost per lead | ROAS is absent or meaningless and will not be reported |
+
+Type is detected automatically, and the audit states which mode it used.
+
+## Known limits
+
+These are stated by the audit itself when relevant, and they are worth knowing before you act:
+
+- **EMQ and CAPI status cannot be read** through the Meta API. Both need manual confirmation in Events Manager, and Signal is graded accordingly.
+- **Ad sets in the learning phase are never evaluated.** They are flagged and excluded from every conclusion.
+- **Meta insights truncate at roughly 37 months.** A "maximum" monthly series is not necessarily account lifetime.
+- **Attribution is Meta's own.** If the brand has Shopify or GA4 connected and Meta-reported purchases diverge from the store by more than ~25%, that gap is itself a hard stop — and reconciling it is outside the audit's scope.
+
+<Warning>
+  Run the audit **before** you spend on a new account, not after. Its most common Red is Signal, and every optimisation you make on top of broken tracking is wasted work.
+</Warning>
+
+## Re-running
+
+The audit caches its last result per brand. Force a fresh run when the account has materially changed — after a tracking fix, a restructure, or a significant budget shift.
+
+<Card title="Next: Media buying" icon="arrow-right" href="/agency-wiki/media-buying">
+  Act on the findings.
+</Card>

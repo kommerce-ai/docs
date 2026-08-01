@@ -1,0 +1,96 @@
+---
+title: "Media buying"
+description: "Build a campaign, review ad sets and copy, and publish to Meta — always paused, never live on publish."
+---
+
+Media Buying covers the path from approved creative to entities in Meta Ads Manager. Open **Media Buying** in the sidebar for the brand, or go to `/campaign/create`.
+
+<Info>
+  **Publishing always creates campaigns, ad sets, and ads in a PAUSED state.** Nothing spends until someone activates it in Ads Manager. This is deliberate — publish is not launch.
+</Info>
+
+{/* SCREENSHOT — capture per images/CAPTURE-LIST.md, then delete these two comment markers.
+<Frame caption="The campaign wizard's three steps.">
+  <img src="/images/media-buying/campaign-step-rail.png" alt="Campaign wizard step rail showing creative selection, configuration, and publish" />
+</Frame>
+*/}
+
+## The three steps
+
+<Steps>
+  <Step title="Select or generate creatives">
+    Pick assets from the brand's library, or generate new ones inline. This is the same creative pipeline described in [Creative production](/agency-wiki/creative/overview).
+  </Step>
+  <Step title="Ad set and ad review">
+    Set the budget mode, targeting, and copy, then approve each ad. This is the step that decides how the campaign learns.
+  </Step>
+  <Step title="Publish to Meta">
+    Kommerce builds the launch payload and creates the entities. Everything arrives paused.
+  </Step>
+</Steps>
+
+{/* SCREENSHOT — capture per images/CAPTURE-LIST.md, then delete these two comment markers.
+<Frame caption="Everything arrives paused. Nothing spends until someone activates it in Ads Manager.">
+  <img src="/images/media-buying/campaign-paused-confirmation.png" alt="Publish confirmation showing the campaign, ad sets, and ads created in a paused state" />
+</Frame>
+*/}
+
+## Step 2 in detail
+
+This is where the real decisions happen.
+
+**Budget mode** — choose CBO (campaign-level budget) or ABO (ad-set-level budgets). The choice interacts with the Structure dimension of the [Meta audit](/agency-wiki/meta-audit): fragmenting a modest budget across many ad sets is the most common structural failure it flags.
+
+**Targeting** — age, location, and audience configuration per ad set.
+
+**Optimisation and pixel** — the conversion event and the pixel the ad set optimises toward.
+
+**Copy and CTA URL** — the ad text and destination.
+
+Each ad is approved individually. Unapproved ads do not publish.
+
+## Managing a live campaign
+
+Once published, open the campaign from the campaigns list to manage it. Agency users can also work across accounts from **Meta Ads** at `/meta-ads`.
+
+## Linking the Meta account
+
+A brand needs a Meta ad account linked before anything can publish. The brand's home surface shows the linked account and lets you change it.
+
+The brand grants **partner access** to your agency's Business Manager directly in Meta, then enters its own ad account ID and clicks **Verify**. Kommerce checks server-side whether that account now appears in your agency's accessible client accounts.
+
+<Note>
+  The brand only ever submits its own ad account ID. Your agency's list of other clients' accounts is never exposed to them — the lookup happens server-side.
+</Note>
+
+An ad account can be linked to **at most one brand**. If verification rejects an ID as already linked, that is the anti-hijack guard doing its job, not a bug.
+
+## When publishing fails
+
+Most publish failures trace to one cause, and it is not the one the error message suggests.
+
+A publish touches two different Meta assets with two different permission requirements:
+
+| What is created | Acts on | Needs |
+| --- | --- | --- |
+| Campaign, ad set, image upload | The **ad account** | A role on the ad account |
+| **Ad creative** | The **Page** — it publishes *as* the Page | A task on the Page (Advertise or Create Content) |
+
+A credential can have full ad-account access and **no Page access**. When that happens, the campaign, ad set, and image upload all succeed — then the ad creative fails with a generic error that says nothing about Pages.
+
+<Warning>
+  If a publish fails partway through with an unhelpful "Invalid parameter" error, check Page permissions first. "Same Meta account" does not mean "same access" — two connections for the same business can differ on which Pages they may act as.
+</Warning>
+
+If a publish fails after the campaign has been created, Kommerce rolls back and deletes the campaign, so you will not be left with a half-built structure.
+
+## Acting on audit findings
+
+The [Meta audit](/agency-wiki/meta-audit) is read-only and will never change the account for you. Its actions map to surfaces here:
+
+| Finding | Where you fix it |
+| --- | --- |
+| Fragmented structure | Budget mode and ad set setup in Step 2 |
+| Stale creative | [Creative production](/agency-wiki/creative/overview), then a new campaign |
+| Spend below the kill line | Ads Manager — pause the offenders |
+| Broken pixel | Meta Events Manager, outside Kommerce |

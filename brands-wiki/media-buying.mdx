@@ -1,0 +1,88 @@
+---
+title: "Media buying"
+description: "Building a campaign, what happens when you publish, and where your ad account gets linked."
+---
+
+Media Buying is where creative becomes a campaign. Open **Media Buying** in your sidebar.
+
+<Info>
+  **Publishing does not spend money.** Campaigns, ad sets, and ads are always created **paused** in Meta Ads Manager. Someone has to activate them there before anything runs.
+</Info>
+
+{/* SCREENSHOT — capture per images/CAPTURE-LIST.md, then delete these two comment markers.
+<Frame caption="The campaign wizard's three steps.">
+  <img src="/images/media-buying/campaign-step-rail.png" alt="Campaign wizard step rail showing creative selection, configuration, and publish" />
+</Frame>
+*/}
+
+## The three steps
+
+<Steps>
+  <Step title="Select or generate creatives">
+    Pick from your library, or generate new assets inline. Same pipeline as [Creative production](/brands-wiki/creative/overview).
+  </Step>
+  <Step title="Review ad sets and ads">
+    Budget mode, targeting, optimisation, and copy. Approve each ad — unapproved ads do not publish.
+  </Step>
+  <Step title="Publish to Meta">
+    Kommerce creates everything, paused, in your ad account.
+  </Step>
+</Steps>
+
+{/* SCREENSHOT — capture per images/CAPTURE-LIST.md, then delete these two comment markers.
+<Frame caption="Everything arrives paused. Nothing spends until someone activates it in Ads Manager.">
+  <img src="/images/media-buying/campaign-paused-confirmation.png" alt="Publish confirmation showing the campaign, ad sets, and ads created in a paused state" />
+</Frame>
+*/}
+
+## What you're deciding in step 2
+
+**Budget mode** — campaign-level (CBO) or ad-set-level (ABO) budgets.
+
+**Targeting** — age and location per ad set.
+
+**Optimisation and pixel** — the conversion event the ad set optimises toward.
+
+**Copy and destination URL** — the ad text and where it sends people.
+
+<Tip>
+  Spreading a modest budget across many ad sets is the most common structural mistake. Each ad set needs enough volume to learn; splitting the budget too finely means none of them do.
+</Tip>
+
+## Linking your Meta ad account
+
+Your ad account is linked once, and it involves a step you take in Meta rather than in Kommerce.
+
+<Steps>
+  <Step title="Find your ad account ID">
+    In your own Meta Business Manager. It looks like `act_1234567890`.
+  </Step>
+  <Step title="Grant partner access">
+    In Meta, grant your agency's Business Manager partner access, scoped to the ad account, page, and pixel. You stay the owner and can revoke this at any time.
+  </Step>
+  <Step title="Enter the ID and verify">
+    In Kommerce, enter your ad account ID and click **Verify**. Kommerce checks server-side that access came through.
+  </Step>
+</Steps>
+
+If verification fails, the usual cause is that access was granted to the wrong Business Manager, or that it hasn't propagated yet. Retry, and if it keeps failing, tell your agency which Business Manager you granted to.
+
+<Warning>
+  Only enter your own ad account ID. If Kommerce says the account is already linked to another brand, stop and contact your agency — that guard exists to stop accounts being claimed by the wrong brand.
+</Warning>
+
+## If publishing fails
+
+Some publish failures produce an unhelpful error message. The most common real cause is **Page permissions**.
+
+Creating an ad creative publishes *as your Facebook Page*, which needs permission on the Page — separate from permission on the ad account. A connection can have full ad-account access and no Page access, in which case the campaign and ad set are created successfully and only the ad fails.
+
+You can't fix this from inside Kommerce. Tell your agency the publish failed at the ad creative step — that detail points them straight at it.
+
+<Note>
+  If a publish fails after the campaign was created, Kommerce deletes the campaign it made, so you won't be left with half a structure in Ads Manager.
+</Note>
+
+## Managing a live campaign
+
+Open a campaign from your campaigns list to manage it. Your brand home shows the linked ad account and lets you change the reporting window.

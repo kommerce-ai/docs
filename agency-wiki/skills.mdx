@@ -1,0 +1,75 @@
+---
+title: "Skills"
+description: "Codified house procedures your agency can fork, tune, and run — in chat or on a schedule."
+---
+
+A skill is a house procedure written down so the product can run it: an account audit, a constraint analysis, a creative brief standard. Skills exist so expertise lives in the product rather than in a senior operator's head.
+
+Open **Skills** at `/skills`. This is an agency-only surface.
+
+## System skills and your forks
+
+Kommerce ships **system skills** — the [Meta account audit](/agency-wiki/meta-audit) is the first. You cannot edit a system skill directly. Instead you **Fork into your agency**, which gives you an editable copy.
+
+Fork when you want to change:
+
+- **Thresholds** — the kill-line ROAS, the spend floor, what counts as stale creative
+- **Voice** — how findings are worded for your clients
+- **Emphasis** — which dimensions matter most for the accounts you run
+
+<Note>
+  Forking is the intended path for tuning. A system skill's defaults are a starting point, not a house standard — your spend bands and client mix are not the ones the default was written against.
+</Note>
+
+## Anatomy of a skill
+
+| Part | What it is |
+| --- | --- |
+| **Description** | What it does *and when to use it*. This is what the agent reads to decide whether to run it. |
+| **Body** | The procedure itself — how to read the data and what to conclude. |
+| **Config** | The numeric thresholds, lifted out of prose so they can be tuned without rewriting. |
+| **Dataset** | What gets pulled before the skill runs. |
+| **Requires** | Which integrations it needs, and at what access level. |
+| **References** | Longer material loaded only when needed. |
+
+Separating config from body is the important bit: changing a threshold is an edit to a number, not a rewrite of the procedure.
+
+## Running a skill
+
+Three ways:
+
+<CardGroup cols={2}>
+  <Card title="From the Skills page" icon="play">
+    **Run against** a brand, then **Run now**. Best for testing after an edit.
+  </Card>
+  <Card title="From chat" icon="message">
+    Describe what you want. The agent picks the skill from its description.
+  </Card>
+  <Card title="On a schedule" icon="clock">
+    Attach it to an [automation](/agency-wiki/automations) with the **Run a skill** action.
+  </Card>
+</CardGroup>
+
+## Evaluate and publish
+
+A skill you have edited shows as **Not evaluated** until you run **Evaluate and publish**.
+
+Evaluation is what makes a skill's numbers trustworthy. The scoring in a skill like the Meta audit is computed in code from binary rules, not judged by the model — which is why the same account produces the same grades on a re-run. Evaluation checks that path still works after your edits.
+
+<Warning>
+  A skill that is disabled or unevaluated will not be offered to the agent. If a skill you expected never runs, check its status on the Skills page before debugging the prompt.
+</Warning>
+
+## Visibility and access
+
+**Visible to agent** controls whether the agent may select the skill from chat. Turn it off for skills you only want to run deliberately.
+
+Skills declare the integrations they need. A skill requiring Meta read access will not run for a brand with no Meta account linked — the requirement is enforced, not advisory.
+
+**Agent context** shows what the skill contributes to the agent's working context.
+
+## Read-only versus acting skills
+
+The Meta audit is declared read-only: it can pull data and reason, but cannot write to the ad account. This is enforced, not a matter of the prompt asking nicely.
+
+When forking, keep a diagnostic read-only. A diagnostic that can also act is one bad inference away from changing a live account.

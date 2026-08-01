@@ -1,0 +1,85 @@
+---
+title: "Roles and access"
+description: "The three account types in Kommerce, and exactly what each one can see and do."
+---
+
+Kommerce has three account types. Which one you have determines your entire navigation — not just permissions on individual buttons, but which items appear in the sidebar at all.
+
+| Account type | Who it is | Scope |
+| --- | --- | --- |
+| `agency` | The agency owner | Every brand in the agency, plus agency-level configuration |
+| `agency_member` | A team member at the agency | Same workspace as the owner, subject to member permissions |
+| `brand` | A brand operating its own account | One brand — their own |
+
+## What each account sees
+
+The sidebar is the clearest expression of the difference.
+
+<CardGroup cols={2}>
+  <Card title="Agency sidebar" icon="building">
+    **Home** → the agency home
+
+    **Brands** → the brand list, expanding to a per-brand submenu:
+    - Media Buying
+    - Creative Production
+
+    **Footer** (collapsible):
+    - Skills
+    - Automations
+    - Integrations
+    - Settings
+    - Log out
+  </Card>
+  <Card title="Brand sidebar" icon="store">
+    **Home** → chat home
+
+    **My Brand**
+
+    **Media Buying**
+
+    **Creative Production**
+
+    **Footer:**
+    - Log out
+  </Card>
+</CardGroup>
+
+Brand users get the four workspace items as flat top-level rows, because there is no agency/brand mode to nest them under — they are always in their own brand's context.
+
+## Agency-only features
+
+These are hidden from brand accounts entirely:
+
+- **Skills** — the house-procedure library
+- **Automations** — scheduled reports and pulses
+- **Integrations** — connecting Meta, Slack, Shopify, ClickUp, and the rest
+- **Settings** — agency configuration, members, workspace channels
+- **Credits** — the agency credit wallet
+- **The Brands list** — brand accounts have exactly one brand and never see a picker
+
+<Note>
+  Integrations and Settings are agency-level by design. A brand user cannot connect their own Meta account from inside Kommerce — the agency connects it on their behalf. If you are a brand user who needs an integration changed, ask your agency.
+</Note>
+
+## Brand context and the agency "view as brand" mode
+
+Agency users move between brands constantly, so most brand-scoped pages carry a `brandId` in the URL. When an agency user opens the chat home with a brand selected, the sidebar switches into the **brand portal** shape — the same layout a brand user sees.
+
+This is deliberate: it lets an agency operator see the workspace the way their client sees it. The agency footer (Skills, Automations, Integrations, Settings) is hidden in that mode.
+
+Kommerce also remembers the last brand workspace you were in and offers a shortcut back to it from the sidebar.
+
+<Warning>
+  A brand user's context is pinned to their own brand and cannot be changed. If a brand-scoped page ever appears empty, it usually means the brand has not been fully onboarded yet — not that you lack permission.
+</Warning>
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Agency guide" icon="building" href="/agency-wiki/overview">
+    Running multiple brands, skills, automations, and integrations.
+  </Card>
+  <Card title="Brand guide" icon="store" href="/brands-wiki/overview">
+    Operating your own brand's workspace.
+  </Card>
+</CardGroup>

@@ -5,3 +5,12 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Screenshot workflow — see images/CAPTURE-LIST.md
+images/CAPTURE-LIST.md
+
+# Work-in-progress captures. Anything not yet reviewed for client data goes
+# here or carries a .wip suffix, so it cannot reach a public deploy by accident.
+images/_wip/
+*.wip.png
+*.wip.jpg

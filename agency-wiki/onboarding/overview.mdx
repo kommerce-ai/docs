@@ -1,0 +1,85 @@
+---
+title: "How onboarding works"
+description: "Three steps, two owners, and two separate finish lines — the model behind every brand you bring on."
+---
+
+Onboarding produces the brand context everything else reads from. Angle research, creative briefs, and reporting all degrade to generic output when it is incomplete, so it is worth understanding the model rather than clicking through it.
+
+## Three steps
+
+| Step | Produces | Can be AI-drafted |
+| --- | --- | --- |
+| **Brand details** | Identity, voice, ICP, competitors, budget | Yes — from the website |
+| **Products & assets** | Products, logo, photos, video, website | Yes — scrape plus uploads |
+| **Connect Meta ad account** | Partner access to your Business Manager | No — human only |
+
+The first two can be prefilled by scraping the brand's site. The third never is: it requires a human to act inside Meta, so it has no draft state.
+
+## Step status
+
+Each step moves through its own state machine:
+
+```
+not_started → ai_drafted → in_progress → complete
+```
+
+A step can jump straight from `ai_drafted` to `complete` if the assignee accepts the draft as-is. **Connect Meta** takes a different path — `not_started → submitted → complete` — because completion depends on server-side verification, not on someone declaring it done.
+
+Any incomplete step can be marked `blocked` when it is waiting on the other party or something external.
+
+What you see in the UI is derived from status and assignee:
+
+| Label | Means |
+| --- | --- |
+| **This step needs you** | Assigned to you, not finished |
+| **We drafted this — review** | AI prefilled it; someone needs to check it |
+| **Waiting on brand** / **Waiting on agency** | Assigned to the other party |
+| **Done** | Complete |
+
+## Who does the work
+
+Every step has an assignee — `brand` or `agency` — set from a preset when you add the brand, and switchable per step afterwards.
+
+<Note>
+  Assignment can be changed on any step that is **not yet complete**. A completed step is locked; the server rejects reassignment rather than silently reopening it. Reassign before it finishes, or reopen the step first.
+</Note>
+
+This is what makes mixed splits work — "we'll handle Meta access, the brand fills in their own details" is a supported configuration, not a workaround.
+
+## Two finish lines
+
+This is the part people conflate, and it matters because one of them is the go-live decision.
+
+<CardGroup cols={2}>
+  <Card title="Intake complete" icon="list-check">
+    All three steps are done. The brand context exists and the product will produce useful output.
+  </Card>
+  <Card title="Launch ready" icon="rocket">
+    Every **required** readiness item is verified. This is the objective go-live gate.
+  </Card>
+</CardGroup>
+
+They are tracked separately because finishing the steps is not the same as being safe to spend. A brand can be intake-complete and still not launch-ready — most commonly because business verification or a payment method has not landed.
+
+See [Launch readiness](/agency-wiki/onboarding/launch-readiness) for the full ledger.
+
+## Progress
+
+The progress bar counts **steps only** — completed steps out of three.
+
+It deliberately does not blend in readiness items. Connect Meta alone produces four of them, so a blended bar would jump 40% in one action and move non-linearly. Granularity lives in the step count and the "still needed" list instead.
+
+## Two acquisition paths
+
+<CardGroup cols={2}>
+  <Card title="Managed service" icon="building">
+    You add the brand. It lands under your agency, gets an invite code and a member-only Slack channel, and follows your chosen preset.
+  </Card>
+  <Card title="Self-serve" icon="user">
+    The brand signs up directly. It lands under the house agency, every step is assigned to the brand, and no Slack channel is provisioned.
+  </Card>
+</CardGroup>
+
+<Card title="Next: Add a brand" icon="arrow-right" href="/agency-wiki/onboarding/add-a-brand">
+  The actual mechanics of bringing one on.
+</Card>
