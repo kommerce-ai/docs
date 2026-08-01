@@ -1,9 +1,9 @@
 ---
 title: "Integrations"
-description: "Connect Meta, Shopify, Slack, ClickUp, and Google once at the agency level, then link them per brand."
+description: "Connect Meta, Shopify, Slack, ClickUp, and Google once at the operator level, then link them per brand."
 ---
 
-Integrations are connected at the **agency** level and linked **per brand**. Brand users cannot connect integrations themselves — if a brand needs one changed, the agency does it.
+Integrations are connected at the **operator** level and linked **per brand**. Brand users cannot connect integrations themselves — if a brand needs one changed, the operator does it.
 
 Open **Integrations** at `/integrations`.
 
@@ -11,9 +11,9 @@ Open **Integrations** at `/integrations`.
 
 | Integration | What it powers |
 | --- | --- |
-| **Meta Ads Manager** | Campaign publishing, performance data, the [Meta audit](/agency-wiki/meta-audit) |
+| **Meta Ads Manager** | Campaign publishing, performance data, the [Meta audit](/operator-wiki/meta-audit) |
 | **Shopify** | Store and product data; revenue reconciliation against Meta-reported purchases |
-| **Slack** | [Automation delivery](/agency-wiki/reporting) and the daily pulse's activity section |
+| **Slack** | [Automation delivery](/operator-wiki/reporting) and the daily pulse's activity section |
 | **ClickUp** | The work-in-progress section of the daily pulse |
 | **Google Ads** | Google campaign data |
 | **Google Analytics** | Site analytics |
@@ -25,15 +25,15 @@ Open **Integrations** at `/integrations`.
 This trips people up, so it is worth being explicit.
 
 <Steps>
-  <Step title="Connect at the agency">
-    Authorise the provider once for the agency. This creates the credential.
+  <Step title="Connect at the operator">
+    Authorise the provider once for the operator. This creates the credential.
   </Step>
   <Step title="Link per brand">
     Point each brand at its specific Slack channel, ClickUp space, Drive folder, and Meta ad account. Under **Settings → Integrations → Workspace channels**.
   </Step>
 </Steps>
 
-Connecting Slack for the agency does **not** mean any brand's pulse can read a channel. The channel has to be linked to the brand, and the bot has to be in it.
+Connecting Slack for the operator does **not** mean any brand's pulse can read a channel. The channel has to be linked to the brand, and the bot has to be in it.
 
 ## Verifying a brand's links
 
@@ -53,12 +53,12 @@ Each brand's linked channels and spaces can be verified from the same surface. V
 
 Meta is the one worth understanding in detail, because two credentials for the same Meta login are not equivalent.
 
-A credential is **an actor, a set of scopes, and the specific assets it can touch**. A per-brand OAuth connection and an agency system-user token are different credentials even for the same business, and they frequently differ on which **Pages** they may act as.
+A credential is **an actor, a set of scopes, and the specific assets it can touch**. A per-brand OAuth connection and an operator system-user token are different credentials even for the same business, and they frequently differ on which **Pages** they may act as.
 
 This matters at publish time: creating an ad creative publishes *as the Page* and needs a task on that Page. A credential with full ad-account access but no Page access will create campaigns and ad sets successfully, then fail on the creative.
 
 <Note>
-  If publishing fails partway with an unhelpful error, this asymmetry is the first thing to check. See [Media buying](/agency-wiki/media-buying#when-publishing-fails).
+  If publishing fails partway with an unhelpful error, this asymmetry is the first thing to check. See [Media buying](/operator-wiki/media-buying#when-publishing-fails).
 </Note>
 
 ## Revocation

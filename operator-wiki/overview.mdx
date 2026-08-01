@@ -1,0 +1,73 @@
+---
+title: "Operator overview"
+description: "How the operator workspace is organised, and the loop you run for every brand."
+---
+
+As an operator you run a portfolio. Kommerce is organised around that: an operator-level shell for things you configure once, and a per-brand workspace you drop into for the actual work.
+
+## The shell
+
+**Home** is where you start. It is a chat-first surface — you describe what you want and Kommerce routes it, rather than making you find the right page first.
+
+**Brands** lists every brand in your portfolio with its onboarding status, active campaigns, and total revenue. Each brand row expands into that brand's workspace:
+
+- **Media Buying** — campaigns, ad sets, publishing, and account management
+- **Creative Production** — briefs, generation, and the asset library
+
+**The footer** holds what you set up once and reuse across brands: Skills, Automations, Integrations, and Settings.
+
+## The loop, per brand
+
+<Steps>
+  <Step title="Onboard the brand">
+    Add the brand and run onboarding so Kommerce has products, personas, and a brand guide to work from. See [Onboarding](/operator-wiki/onboarding/overview).
+  </Step>
+  <Step title="Audit what exists">
+    Run a [Meta audit](/operator-wiki/meta-audit) on the ad account before you spend anything. It grades Signal, Structure, Waste, and Creative, and hands you a ranked action list.
+  </Step>
+  <Step title="Find the angle">
+    Use the [brand audit and analysis](/operator-wiki/angle-research) to establish positioning, competitor gaps, and which persona to lead with.
+  </Step>
+  <Step title="Produce creative">
+    Run the [creative brief → templates → generate](/operator-wiki/creative/overview) wizard to turn an angle into finished assets.
+  </Step>
+  <Step title="Launch">
+    Build the campaign, review ad sets and copy, and [publish to Meta](/operator-wiki/media-buying).
+  </Step>
+  <Step title="Report">
+    Set up a [daily or weekly pulse](/operator-wiki/automations) so the brand hears from you on a schedule without you assembling it by hand.
+  </Step>
+</Steps>
+
+## Brand status
+
+The Brands list shows where each brand is in onboarding:
+
+| Status | Meaning |
+| --- | --- |
+| **Discovered** | Added, not yet onboarded |
+| **Processing** | Onboarding is running |
+| **Completed** / **Fully onboarded** | Products, personas, and brand guide are in place |
+
+You can **Add brand only** to create the record without running onboarding, then **Start Onboarding** later.
+
+<Tip>
+  Brands that are not fully onboarded will produce thin creative briefs and weak angle research, because both read from the brand guide. If output looks generic, check onboarding status first.
+</Tip>
+
+## What you configure once
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="plug" href="/operator-wiki/integrations">
+    Meta, Shopify, Slack, ClickUp, Google. Connected at the operator level, used by every brand.
+  </Card>
+  <Card title="Skills" icon="brain" href="/operator-wiki/skills">
+    House procedures — like the Meta account audit — that you can fork and tune.
+  </Card>
+  <Card title="Automations" icon="bolt" href="/operator-wiki/automations">
+    Scheduled pulses that post to Slack on a cron.
+  </Card>
+  <Card title="Credits" icon="wallet" href="/operator-wiki/credits">
+    The operator wallet that funds generation across all brands.
+  </Card>
+</CardGroup>

@@ -5,7 +5,7 @@ Not published — this file is in `.mintignore`.
 ## Before you capture anything
 
 Both wikis are **public with no authentication**. Anything visible in a screenshot is
-on the open internet, and brands can read the agency wiki.
+on the open internet, and brands can read the operator wiki.
 
 **Capture from a demo brand with fabricated data. Never from a live client account.**
 
@@ -24,7 +24,7 @@ Check every frame for:
 ## Where files go
 
 Organised by **subject**, not by wiki, because most of this UI is identical for
-agency and brand users and the same file serves both pages.
+operator and brand users and the same file serves both pages.
 
 ```
 images/onboarding/     Meta connection flow
@@ -33,8 +33,8 @@ images/media-buying/   Campaign wizard
 images/meta-audit/     Audit scorecard
 ```
 
-If a surface is genuinely agency-only (the portfolio view, the brands list), put it in
-`images/agency-only/` — and think hard about whether it should exist at all, given
+If a surface is genuinely operator-only (the portfolio view, the brands list), put it in
+`images/operator-only/` — and think hard about whether it should exist at all, given
 those screens are the ones that carry client figures.
 
 ## The list
@@ -50,7 +50,7 @@ exactly where someone is hunting for a button in *Meta's* interface.
 | File | Shot | Used by |
 | --- | --- | --- |
 | `onboarding/connect-meta-agency-id.png` | The Kommerce panel showing the agency ID with its copy button | brands · connect-meta |
-| `onboarding/connect-meta-partner-access.png` | Meta Business Manager's partner-access screen, mid-flow | brands · connect-meta, agency · meta-access |
+| `onboarding/connect-meta-partner-access.png` | Meta Business Manager's partner-access screen, mid-flow | brands · connect-meta, operator · meta-access |
 | `onboarding/connect-meta-success.png` | The "Connected — your ad account is linked" state | brands · connect-meta |
 
 For the Meta-side shot, use a throwaway Business Manager. Redact the real agency ID
@@ -88,7 +88,7 @@ rather than only asserting.
 
 | File | Shot | Used by |
 | --- | --- | --- |
-| `meta-audit/dimension-scorecard.png` | The four dimensions with their grades and receipts | agency · meta-audit |
+| `meta-audit/dimension-scorecard.png` | The four dimensions with their grades and receipts | operator · meta-audit |
 
 Four dimensions — Signal, Structure, Waste, Creative — graded **Green**, **Yellow**,
 **Red**, or **Blind**, each with a one-line numeric receipt.

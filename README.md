@@ -26,14 +26,14 @@ mint broken-links
 | --- | --- |
 | `docs.json` | Site config — name, colors, fonts, navigation, redirects, footer |
 | `index.mdx`, `quickstart.mdx` | Public marketing pages |
-| `agency-wiki/` | Product wiki for agency users |
+| `operator-wiki/` | Product wiki for operator users |
 | `brands-wiki/` | Product wiki for brand users |
 | `favicon.ico` | Site favicon |
 | `AGENTS.md` | Instructions for AI coding tools working in this repo |
 
 ## Access control
 
-> **Everything on this site is PUBLIC, including `/agency-wiki`.** The split between the two wikis is organisational only — it is not a security boundary. Anyone with the URL can read either one.
+> **Everything on this site is PUBLIC, including `/operator-wiki`.** The split between the two wikis is organisational only — it is not a security boundary. Anyone with the URL can read either one.
 
 Access control is **deliberately not applied yet**, because applying it without authentication configured makes things worse rather than better: the `groups` frontmatter hides pages from the site navigation, but does **not** block direct URL access. The result would be a site where the wiki tabs have vanished for everyone while the pages remain publicly readable.
 
@@ -49,10 +49,12 @@ Two things must be true, in this order:
 | Content | Frontmatter to add | Who gets in |
 | --- | --- | --- |
 | `index.mdx`, `quickstart.mdx` | `public: true` *(already set)* | Everyone, no login |
-| `brands-wiki/*` | `groups: ["brand", "agency", "agency_member"]` | Brand and agency users |
-| `agency-wiki/*` | `groups: ["agency", "agency_member"]` | Agency users only |
+| `brands-wiki/*` | `groups: ["brand", "agency", "agency_member"]` | Brand and operator users |
+| `operator-wiki/*` | `groups: ["agency", "agency_member"]` | Operator users only |
 
-List **both** `agency` and `agency_member` wherever agency access is granted. They are distinct user types in the app, and omitting `agency_member` locks out agency staff if the JWT emits the raw `userType` instead of collapsing it to `agency`.
+The group names stay `agency` / `agency_member` even though the wiki is now called the operator wiki: those are the literal `userType` values the app emits, not labels we choose. Rename them only if the app changes.
+
+List **both** wherever operator access is granted — they are distinct user types, and omitting `agency_member` locks out operator staff if the JWT emits the raw `userType` instead of collapsing it to `agency`.
 
 A user whose groups don't match a page gets a 404. Unauthenticated users can't reach any non-public page.
 
