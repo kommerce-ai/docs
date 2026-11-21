@@ -70,7 +70,7 @@ paragraph genuinely cannot convey it.
 
 | File | Shot | Used by |
 | --- | --- | --- |
-| `creative/video-step-rail.png` | The five-step rail: Brief · Style · Cast · Script · Post-production | both · video-generation |
+| `creative/video-step-rail.png` | The five-step rail: Brief · Look · Script · Storyboard · Post-production | both · video-generation |
 
 One shot of the step chrome explains the entire flow.
 

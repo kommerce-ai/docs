@@ -1,14 +1,20 @@
 ---
 title: "Launch readiness"
-description: "The objective go-live gate — what's required, who owns it, and what you verify."
+description: "The readiness ledger — what each brand still owes, who owns it, and how it relates to the go-live gate."
 ---
 
-Launch readiness is a separate ledger from step completion. Steps *produce* readiness items; you *verify* them. A brand is launch-ready only when every required item is verified.
+The readiness ledger tracks what a brand still owes. Steps *produce* readiness items; you *verify* them.
+
+<Warning>
+  **The ledger does not gate the `launch_ready` flag.** That flag is purely step-based — intake plus Connect Meta. Required items still missing show up as the **still needed** list, and a brand can read as launch-ready with items outstanding.
+
+  They still matter: Meta enforces most of them itself. A brand without a payment method or business verification cannot spend, whatever Kommerce says.
+</Warning>
 
 ## The checklist
 
 <CardGroup cols={2}>
-  <Card title="Required — blocks launch" icon="lock">
+  <Card title="Required — on the still-needed list" icon="lock">
     - Logo
     - Product photos
     - Website access
@@ -47,17 +53,17 @@ Brand artifacts leave `missing` when their producing step completes. Meta items 
 The **still needed** list is exactly the required items still sitting at `missing`. It is the chase list — work it directly rather than reading step statuses and inferring.
 
 <Tip>
-  Check still-needed before the kickoff call, not after. Business verification and payment method are the two items with real external latency — Meta's own verification can take days, and it is the most common reason a brand that "finished onboarding" cannot actually spend.
+  Check still-needed before the kickoff call, not after. Business verification and payment method are the two items with real external latency — Meta's own verification can take days, and it is the most common reason a brand that reads as launch-ready cannot actually spend.
 </Tip>
 
-## Intake complete is not launch ready
+## Two gates, and neither is the whole story
 
-A brand showing **Fully onboarded** in the Brands list has finished all three steps. That is intake, not the go-live gate.
+**Launch ready** is Kommerce's gate — intake plus Connect Meta. It unlocks **Start kickoff**.
 
-The gap between them is almost always business verification or payment method — both required, both owned by the brand, and neither produced by simply completing a form in Kommerce.
+**The still-needed list** is Meta's gate in practice. Nothing in Kommerce blocks on it, but Meta will: no payment method means no spend, and unverified business means no spend, regardless of what the brand's status says.
 
 <Warning>
-  Do not schedule a launch date off "Fully onboarded". Check launch readiness, and specifically whether business verification is verified rather than received.
+  Do not schedule a launch date off the launch-ready flag alone. It can be true while business verification is still pending, because that item does not feed the flag. Check the still-needed list separately.
 </Warning>
 
 ## Before you spend
