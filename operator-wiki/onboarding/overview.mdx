@@ -19,13 +19,11 @@ The first two can be prefilled by scraping the brand's site. The third never is:
 
 Each step moves through its own state machine:
 
-```
-not_started → ai_drafted → in_progress → complete
-```
+A step moves from **not started**, to **drafted** if Kommerce prefilled it, to **in progress**, to **done**.
 
-A step can jump straight from `ai_drafted` to `complete` if the assignee accepts the draft as-is. **Connect Meta** takes a different path — `not_started → submitted → complete` — because completion depends on server-side verification, not on someone declaring it done.
+A step can jump straight from drafted to done if whoever owns it accepts the draft as-is. **Connect Meta** works differently: it goes from not started, to submitted, to done — because Kommerce has to verify it with Meta rather than take someone's word for it.
 
-Any incomplete step can be marked `blocked` when it is waiting on the other party or something external.
+Any unfinished step can be marked **blocked** when it's waiting on the other side or on something external.
 
 What you see in the UI is derived from status and assignee:
 
@@ -43,7 +41,7 @@ What you see in the UI is derived from status and assignee:
 
 ## Who does the work
 
-Every step has an assignee — `brand` or `agency` — set from a preset when you add the brand, and switchable per step afterwards.
+Every step is assigned either to the brand or to your team, set from a preset when you add the brand and changeable per step afterwards.
 
 <Note>
   Assignment can be changed on any step that is **not yet complete**. A completed step is locked; the server rejects reassignment rather than silently reopening it. Reassign before it finishes, or reopen the step first.
