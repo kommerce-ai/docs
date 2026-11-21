@@ -16,10 +16,18 @@
 - **Department** — the Kommerce system as a whole. It is "installed", not "signed up for".
 - **Operator** — the party running accounts on the brand's behalf, and also the individual human assigned to an account. Not "agency", "account manager" or "rep". The operator side is documented at `/operator-wiki`, the brand side at `/brands-wiki`.
 - **Do not say "agency"** in published copy. The one exception is the product's own control labelled **Copy agency ID** in the Meta connection flow — quote that label verbatim, because renaming it in the docs would contradict what the user sees on screen. If the product UI is ever renamed, drop the exception.
-- **The five jobs** — angle research, copywriting, creative production, media buying, weekly reporting. Refer to them as jobs, not "features" or "modules".
+- **The lifecycle** — client onboarding, audit and research, creative testing, scaling. This is how the operator wiki is organised; follow it rather than inventing other groupings.
 - **Angle** — a claim, audience, or positioning hypothesis worth testing.
 - Say **brand**, not "client" or "customer account".
 - Kommerce is a managed service. Never describe it as a tool, app, platform, SaaS, or something a user "installs" themselves.
+
+## Audience
+
+The operator wiki is read by **media buyers and account managers, not engineers**. Write for them:
+
+- Use the words the product shows on screen, not the names in the code. "Winner: move it to scale", not `propose_graduation`.
+- Spell out numbers in context — "two and a half times break-even CPA" beats `2.5 × C`.
+- No state-machine arrows, enum values, or backticked internal identifiers. Exceptions are things a reader actually types or sees, like an `act_` ad account id.
 
 ## Style preferences
 
@@ -46,6 +54,7 @@ Full workflow and the outstanding shot list live in `images/CAPTURE-LIST.md` (no
 
 - **Do not publish pricing.** Pricing depends on scope and is set on the call by design. Do not infer, estimate, or reproduce numbers.
 - **Do not invent metrics, results, or case studies.** No CAC figures, ROAS claims, or client names unless supplied and approved.
-- **Do not document an API, SDK, CLI, or self-serve signup.** None exist. Onboarding runs through a call.
+- **Do not document an SDK, CLI, or self-serve signup.** None exist; onboarding runs through a call.
+- **The MCP connection is real and documented** at `/operator-wiki/mcp/overview`. It is operator-only — brand logins are refused — so never tell a client they can connect.
 - Do not add integrations to the documented stack (Shopify, Meta, Google, TikTok, Slack, ClickUp) without confirmation.
 - Verify claims against [usekommerce.com](https://usekommerce.com) before publishing. When a detail cannot be verified, leave it out rather than hedging in public copy.

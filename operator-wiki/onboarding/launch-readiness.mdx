@@ -6,7 +6,7 @@ description: "The readiness ledger — what each brand still owes, who owns it, 
 The readiness ledger tracks what a brand still owes. Steps *produce* readiness items; you *verify* them.
 
 <Warning>
-  **The ledger does not gate the `launch_ready` flag.** That flag is purely step-based — intake plus Connect Meta. Required items still missing show up as the **still needed** list, and a brand can read as launch-ready with items outstanding.
+  **This list doesn't control the launch-ready status.** That status is based purely on the steps — brand info in, plus Connect Meta done. Required items still missing show up as the **still needed** list, and a brand can read as launch-ready with items outstanding.
 
   They still matter: Meta enforces most of them itself. A brand without a payment method or business verification cannot spend, whatever Kommerce says.
 </Warning>
@@ -38,19 +38,17 @@ Meta Pixel being optional is worth a second look. It will not block launch, but 
 
 ## Item status
 
-```
-missing → received → verified
-```
+Each item moves from **missing**, to **received** once a step produces it, to **verified** once it's confirmed.
 
 - **Missing** — not provided yet
 - **Received** — a step produced it; not yet confirmed
 - **Verified** — you confirmed it, or the server did
 
-Brand artifacts leave `missing` when their producing step completes. Meta items leave `missing` only once verification succeeds.
+Brand items stop being missing when the step that produces them finishes. Meta items only count once verification actually succeeds.
 
 ## Still needed
 
-The **still needed** list is exactly the required items still sitting at `missing`. It is the chase list — work it directly rather than reading step statuses and inferring.
+The **still needed** list is simply the required items nobody has provided yet. It is the chase list — work it directly rather than reading step statuses and inferring.
 
 <Tip>
   Check still-needed before the kickoff call, not after. Business verification and payment method are the two items with real external latency — Meta's own verification can take days, and it is the most common reason a brand that reads as launch-ready cannot actually spend.
@@ -58,7 +56,7 @@ The **still needed** list is exactly the required items still sitting at `missin
 
 ## Two gates, and neither is the whole story
 
-**Launch ready** is Kommerce's gate — intake plus Connect Meta. It unlocks **Start kickoff**.
+**Launch ready** is Kommerce's gate — brand info in, plus Connect Meta done. It unlocks **Start kickoff**.
 
 **The still-needed list** is Meta's gate in practice. Nothing in Kommerce blocks on it, but Meta will: no payment method means no spend, and unverified business means no spend, regardless of what the brand's status says.
 

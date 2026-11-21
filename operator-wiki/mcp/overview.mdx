@@ -4,12 +4,14 @@ sidebarTitle: "Overview"
 description: "Driving Kommerce from Claude — what connects, what it can do, and what stays with a person."
 ---
 
-Kommerce exposes an MCP server, so you can run the platform from Claude instead of the app: read performance, write briefs, generate and review creatives, run tests, and publish paused ads to Meta.
+You can drive Kommerce from Claude instead of clicking through the app — read performance, write briefs, generate and review creatives, run tests, and publish paused ads to Meta.
+
+It's the same product with the same rules. Nothing you can do in Claude bypasses a gate the app would have applied.
 
 <Warning>
-  **Operator accounts only.** Connection is refused for any account that is not `agency`, `agency_member` or `admin` — a brand user attempting to connect is told *"This account cannot connect Claude."*
+  **Operator accounts only.** Brand logins can't connect — they're told *"This account cannot connect Claude."*
 
-  Brand access is designed but not shipped. Do not tell a client they can connect yet.
+  Brand access is built into the plan but hasn't shipped. Don't tell a client they can connect yet.
 </Warning>
 
 ## Connecting
@@ -31,10 +33,10 @@ If sign-in fails, two messages tell you which side the problem is on:
 
 ## Start with the brand
 
-Every tool is scoped to one brand. List the brands, take the id, and work from there — an agent that skips this step guesses, and guessing across brands is the one thing the surface is built to prevent.
+Everything is scoped to one brand at a time. Say which brand you're working on before anything else — otherwise Claude is guessing, and guessing across brands is exactly what this is built to prevent.
 
 <Note>
-  Read the brand's context before writing direction or copy, and read its performance evidence before proposing an angle. The account already knows what converts; starting from brand context rather than instinct is the difference between a useful draft and a generic one.
+  Ask it to read the brand guide before writing copy, and the performance evidence before proposing an angle. The account already knows what converts — that's the difference between a useful draft and a generic one.
 </Note>
 
 ## What it can do
@@ -45,7 +47,7 @@ Every tool is scoped to one brand. List the brands, take the id, and work from t
 | **Write** | Briefs, personas, brand guide, learnings |
 | **Generate** | Creatives, test creatives — always quoted before spending |
 | **Review** | Score, comment on a region, regenerate, approve or reject |
-| **Test** | Suggest, create, brief, generate, publish, read the engine, conclude |
+| **Test** | Suggest, create, brief, generate, publish, read the daily calls, close out |
 | **Publish** | Prepare and publish to Meta — always paused |
 | **Research** | Competitor ads and curated boards |
 
@@ -63,25 +65,25 @@ Every tool is scoped to one brand. List the brands, take the id, and work from t
 It also cannot create campaigns. A new campaign is built in Ads Manager or in Kommerce's own publish modal.
 
 <Warning>
-  Competitor research bills per ad returned. The result limit *is* the price — asking for a large sample to "see what's there" is a real cost, not a browse.
+  Competitor research is billed per ad returned, so the number of results you ask for **is** the price. Asking for a big sample to "see what's there" costs real money — it isn't browsing.
 </Warning>
 
 ## Why actions are attributed
 
-Every call records who did it, for which brand, through which channel, and what happened. A brief that appears overnight or a budget that moved is traceable to a person, to Kenny, or to the system.
+Every action records who did it, for which brand, and what happened. A brief that appeared overnight or a budget that moved is traceable rather than mysterious.
 
-This matters more over MCP than in the app, because an agent can do a lot quickly and the audit trail is what makes that safe to allow.
+This matters more here than in the app, because Claude can do a lot very quickly — the record is what makes that safe to hand out.
 
 ## Before you trust a long agent run
 
 <Steps>
   <Step title="Check the brand">
-    Confirm it is pinned to the brand you meant. Everything downstream inherits it.
+    Make sure it's working on the brand you meant. Everything after that inherits it.
   </Step>
   <Step title="Read quotes, don't skim them">
     The quote is the last gate before credits move.
   </Step>
   <Step title="Verify in the app">
-    Published ads, concluded tests and written learnings all show in Kommerce. Check the result rather than trusting the transcript.
+    Published ads, closed tests and new learnings all show up in Kommerce. Check there rather than trusting the chat transcript.
   </Step>
 </Steps>
