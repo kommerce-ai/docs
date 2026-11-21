@@ -32,13 +32,18 @@ What you see in the UI is derived from status and assignee:
 | Label | Means |
 | --- | --- |
 | **This step needs you** | Assigned to you, not finished |
-| **We drafted this — review** | AI prefilled it; someone needs to check it |
-| **Waiting on brand** / **Waiting on operator** | Assigned to the other party |
+| **Drafted — review** | AI prefilled it; someone needs to check it |
+| **In progress** | Started, not finished |
+| **Waiting on brand** / **Waiting on agency** | Assigned to the other party |
 | **Done** | Complete |
+
+<Note>
+  The chip reads **Waiting on agency**, not "operator" — the product has not been renamed, so the label still uses the old word.
+</Note>
 
 ## Who does the work
 
-Every step has an assignee — `brand` or `operator` — set from a preset when you add the brand, and switchable per step afterwards.
+Every step has an assignee — `brand` or `agency` — set from a preset when you add the brand, and switchable per step afterwards.
 
 <Note>
   Assignment can be changed on any step that is **not yet complete**. A completed step is locked; the server rejects reassignment rather than silently reopening it. Reassign before it finishes, or reopen the step first.
@@ -52,20 +57,22 @@ This is the part people conflate, and it matters because one of them is the go-l
 
 <CardGroup cols={2}>
   <Card title="Intake complete" icon="list-check">
-    All three steps are done. The brand context exists and the product will produce useful output.
+    **Brand details** and **Products & assets** are done — the two steps that put brand information in. Connect Meta is not part of it.
   </Card>
   <Card title="Launch ready" icon="rocket">
-    Every **required** readiness item is verified. This is the objective go-live gate.
+    Intake done **and** Connect Meta complete. This is the go-live gate: it unlocks **Start kickoff** and is what sets the brand to onboarded.
   </Card>
 </CardGroup>
 
-They are tracked separately because finishing the steps is not the same as being safe to spend. A brand can be intake-complete and still not launch-ready — most commonly because business verification or a payment method has not landed.
+So intake is two steps, not three. The gap between the two milestones is exactly one thing: Meta access verified.
 
-See [Launch readiness](/operator-wiki/onboarding/launch-readiness) for the full ledger.
+<Note>
+  The readiness ledger does **not** gate launch readiness. Required items that are still missing appear as the **still needed** list, which is a chase list rather than a lock. See [Launch readiness](/operator-wiki/onboarding/launch-readiness).
+</Note>
 
 ## Progress
 
-The progress bar counts **steps only** — completed steps out of three.
+The progress bar counts **steps only** — completed steps out of all three, so it is not the same denominator as the intake milestone (which counts two).
 
 It deliberately does not blend in readiness items. Connect Meta alone produces four of them, so a blended bar would jump 40% in one action and move non-linearly. Granularity lives in the step count and the "still needed" list instead.
 
