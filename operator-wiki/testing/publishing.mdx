@@ -1,6 +1,6 @@
 ---
-title: "Media buying"
-description: "Build a campaign, review ad sets and copy, and publish to Meta — always paused, never live on publish."
+title: "Publishing in Meta"
+description: "Getting a test live in Meta — always paused, never spending on publish."
 ---
 
 Media Buying covers the path from approved creative to entities in Meta Ads Manager. Open **Media Buying** in the sidebar for the brand, or go to `/campaign/create`.
@@ -19,7 +19,7 @@ Media Buying covers the path from approved creative to entities in Meta Ads Mana
 
 <Steps>
   <Step title="Select or generate creatives">
-    Pick assets from the brand's library, or generate new ones inline. This is the same creative pipeline described in [Creative production](/operator-wiki/creative/overview).
+    Pick assets from the brand's library, or generate new ones inline. This is the same creative pipeline described in [Creative production](/operator-wiki/testing/content-generation).
   </Step>
   <Step title="Ad set and ad review">
     Set the budget mode, targeting, and copy, then approve each ad. This is the step that decides how the campaign learns.
@@ -39,7 +39,7 @@ Media Buying covers the path from approved creative to entities in Meta Ads Mana
 
 This is where the real decisions happen.
 
-**Budget mode** — choose CBO (campaign-level budget) or ABO (ad-set-level budgets). The choice interacts with the Structure dimension of the [Meta audit](/operator-wiki/meta-audit): fragmenting a modest budget across many ad sets is the most common structural failure it flags.
+**Budget mode** — choose CBO (campaign-level budget) or ABO (ad-set-level budgets). The choice interacts with the Structure dimension of the [Meta audit](/operator-wiki/audit/meta-audit): fragmenting a modest budget across many ad sets is the most common structural failure it flags.
 
 **Targeting** — age, location, and audience configuration per ad set.
 
@@ -86,11 +86,11 @@ If a publish fails after the campaign has been created, Kommerce rolls back and 
 
 ## Acting on audit findings
 
-The [Meta audit](/operator-wiki/meta-audit) is read-only and will never change the account for you. Its actions map to surfaces here:
+The [Meta audit](/operator-wiki/audit/meta-audit) is read-only and will never change the account for you. Its actions map to surfaces here:
 
 | Finding | Where you fix it |
 | --- | --- |
 | Fragmented structure | Budget mode and ad set setup in Step 2 |
-| Stale creative | [Creative production](/operator-wiki/creative/overview), then a new campaign |
+| Stale creative | [Creative production](/operator-wiki/testing/content-generation), then a new campaign |
 | Spend below the kill line | Ads Manager — pause the offenders |
 | Broken pixel | Meta Events Manager, outside Kommerce |

@@ -1,0 +1,112 @@
+---
+title: "Optimisation"
+description: "The daily engine cycle — how arms are judged, how budget moves, and when to overrule it."
+---
+
+Once a test is live, the engine reads it every day and decides what each arm deserves. Your job shifts from producing to reading the engine and overruling it where you have information it does not.
+
+## What a cycle does
+
+One cycle is one day. Data in, decisions out:
+
+<Steps>
+  <Step title="Read every arm">
+    Spend, impressions and orders, against the step-by-step funnel.
+  </Step>
+  <Step title="Compare to the account, not to zero">
+    Every ad set over recent weeks defines what "typical" looks like at each funnel step. An arm is judged against that baseline.
+  </Step>
+  <Step title="Decide per arm">
+    Each arm gets an action and a written reason.
+  </Step>
+  <Step title="Recommend what's next">
+    What to make or launch to reach a scalable winner sooner.
+  </Step>
+</Steps>
+
+The decisions are recorded as a ledger. Approved actions are then applied inside the test's contract — the engine cannot spend outside what the test authorised.
+
+## How an arm moves
+
+```
+queued → testing → confirming → winner
+                 ↘ paused / killed
+```
+
+**Testing** is the first funding. **Confirming** is a second, fresh window that has to independently hold up — an arm that passed on early luck falls back to testing rather than graduating.
+
+| Action | When |
+| --- | --- |
+| `launch` | Start the arm with a daily budget |
+| `extend` | Add funding to an idea that is close |
+| `start_confirming` | Passed testing; prove it again on fresh data |
+| `back_to_testing` | Confirmation is not holding up |
+| `propose_graduation` | Proven — **move it to scale** |
+| `stop_promising` | Out of funding, still plausible. Not a failure |
+| `stop_at_funding` | Out of funding, no case to continue |
+| `pause` / `kill` | Stop spending |
+
+<Note>
+  **`stop_promising` is not `kill`.** An idea that ran out of funding while still looking plausible is recorded as *promising, unproven* — it is a candidate to retest with more funding, not a dead end. Treating the two the same throws away your best iteration material.
+</Note>
+
+## The numbers behind the decisions
+
+Everything is relative to break-even CPA (`C`):
+
+| Rule | Default |
+| --- | --- |
+| Funding per idea | 2.5 × `C` |
+| Test window | 6 days |
+| Minimum before any verdict | 72 hours |
+| Pause consideration | at 2 × `C` spent |
+| Kill consideration | at 3 × `C` spent |
+| Passing confidence | 90% |
+| Confirmation funding | 2 × `C` |
+| Maximum extensions | 1 |
+| Funding ceiling for a winner | 10 × `C` |
+
+<Warning>
+  **Nothing is judged before 72 hours.** If an arm looks terrible on day one, that is noise — Meta has not finished learning and the engine knows it. Pausing manually inside that window destroys the evidence the engine was about to collect.
+</Warning>
+
+### Earned extensions
+
+An idea whose estimated CPA is already under `C` is *making money while it proves itself*. Funding that is not waste, so the engine keeps extending it — up to the 10 × `C` ceiling — as long as it stays likely enough.
+
+This exists because fixed funding stops good ad sets early. Proving a winner takes roughly 15 orders, which is about 10 × `C` when the true CPA is around 0.6 × `C`.
+
+## The account guard
+
+The engine also watches the whole account, not just the test. It pulls back when:
+
+- CPM runs at twice the account median
+- Account CPA sits above 1.5 × `C` for three days
+
+<Tip>
+  A guard trip means the account is in trouble, not the test. Chasing individual arms while the guard is on wastes effort — find out what changed at the account level first.
+</Tip>
+
+## Reading the funnel, not just the CPA
+
+Each arm is read step by step, so a weak arm is attributed rather than just condemned: cheap clicks with no orders is a different problem from no clicks at all.
+
+<Note>
+  Where checkouts are under-recorded, the checkout and purchase steps measure **tracking quality**, not the ad. The engine excludes them from attribution when it cannot trust them — which is why a healthy [Meta audit](/operator-wiki/audit/meta-audit) makes the engine smarter, not just tidier.
+</Note>
+
+## Concluding a test
+
+When the engine has called it, draft a verdict and then conclude the test in your own words. The outcome is `winner`, `loser` or `inconclusive`, with a next action of `scale`, `iterate` or `stop`.
+
+Concluding writes a **learning** — citable by every future brief. This is where a test stops being an event and becomes institutional knowledge.
+
+<Warning>
+  Write the verdict in your own words rather than accepting the draft unedited. The draft knows the numbers; it does not know the context — a client decision, a stock problem, a seasonal spike — that explains them.
+</Warning>
+
+Nothing is deleted. Archiving hides a test; retiring supersedes a learning.
+
+<Card title="Next: Scaling" icon="arrow-right" href="/operator-wiki/scaling/overview">
+  What to do with a winner.
+</Card>

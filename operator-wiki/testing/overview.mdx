@@ -1,0 +1,74 @@
+---
+title: "How creative testing works"
+sidebarTitle: "Overview"
+description: "The loop that takes an idea from recommendation to a proven winner — and the bar everything is measured against."
+---
+
+Creative testing is the centre of Kommerce. Everything before it exists to feed it, and scaling exists to cash in what it proves.
+
+A test is a set of **ideas** running as **arms**. Each arm gets funding, runs against a bar, and ends in a verdict. The engine reads the account every day and says what to do next.
+
+## The loop
+
+<Steps>
+  <Step title="Test generation">
+    The engine recommends what to test next from what the account already shows. See [Test generation](/operator-wiki/testing/test-generation).
+  </Step>
+  <Step title="Creative strategy">
+    Each version gets a brief — the angle, persona and hook it exists to prove. See [Creative strategy](/operator-wiki/testing/creative-strategy).
+  </Step>
+  <Step title="Content generation">
+    The briefs become assets. See [Content generation](/operator-wiki/testing/content-generation).
+  </Step>
+  <Step title="Publishing in Meta">
+    Everything publishes **paused**. See [Publishing in Meta](/operator-wiki/testing/publishing).
+  </Step>
+  <Step title="Optimisation">
+    The engine runs daily, moves budget, and calls each arm. See [Optimisation](/operator-wiki/testing/optimisation).
+  </Step>
+</Steps>
+
+Winners leave this loop through [Scaling](/operator-wiki/scaling/overview).
+
+## The bar
+
+Every judgement is made against **break-even CPA** — written as `C` throughout. It is set on the test plan and it is the number the engine measures against.
+
+<Warning>
+  Set `C` honestly. It is not a target, it is the point where a sale stops making money. An optimistic `C` makes the engine kill ideas that were working and graduate ideas that were not.
+</Warning>
+
+## What a test is made of
+
+| Concept | What it means |
+| --- | --- |
+| **Idea** | One thing you are testing — an angle, a persona, an offer |
+| **Arm** | That idea running in Meta, with its own ad set and funding |
+| **Variant** | An execution of the idea. Variants live *inside* an arm's ad set |
+| **Slot** | Capacity for one arm. Slots are the scarce resource, not variants |
+
+<Note>
+  **Variants are free, slots are not.** Several executions of one idea share a single ad set and a single budget. A new angle, hook or persona is a *different idea* and takes its own slot.
+
+  This is why "make ten more versions" is cheap and "test ten more ideas" is not.
+</Note>
+
+## What you choose when you create a test
+
+| Setting | Options |
+| --- | --- |
+| **Variable** | `ads`, `landing_page`, `offer` — what you are changing |
+| **Goal** | `audience`, `angle`, `offer`, `leak` |
+| **Setup** | `against_bar` (each version against `C`) or `per_version` (versions against each other) |
+| **Budget** | `lifetime_abo`, `lifetime_cbo`, `daily_abo` |
+| **Strictness** | `cautious`, `balanced`, `bold` |
+
+Strictness moves how much evidence the engine wants before it acts. `bold` calls things sooner and is wrong more often; `cautious` spends more before deciding.
+
+## Who did what
+
+Every action on a test is attributed to a **person**, to **Kenny**, or to the **system**. The engine's own moves are recorded as system actions, so a budget change that you did not make is traceable rather than mysterious.
+
+<Card title="Start with test generation" icon="arrow-right" href="/operator-wiki/testing/test-generation">
+  What the engine recommends testing next, and why.
+</Card>
