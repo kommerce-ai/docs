@@ -1,0 +1,87 @@
+---
+title: "Kommerce MCP"
+sidebarTitle: "Overview"
+description: "Driving Kommerce from Claude — what connects, what it can do, and what stays with a person."
+---
+
+Kommerce exposes an MCP server, so you can run the platform from Claude instead of the app: read performance, write briefs, generate and review creatives, run tests, and publish paused ads to Meta.
+
+<Warning>
+  **Operator accounts only.** Connection is refused for any account that is not `agency`, `agency_member` or `admin` — a brand user attempting to connect is told *"This account cannot connect Claude."*
+
+  Brand access is designed but not shipped. Do not tell a client they can connect yet.
+</Warning>
+
+## Connecting
+
+Add Kommerce as a connector in Claude and complete sign-in. You are asked to approve what the connection may do:
+
+- Read your brand guide, products, personas, briefs, creatives and landing pages
+- Read your Meta ad performance
+- Comment on, review and approve creatives and landing pages
+- Review and approve work
+
+If sign-in fails, two messages tell you which side the problem is on:
+
+| Message | Means |
+| --- | --- |
+| *"Could not reach Kommerce."* | Network — check your connection, start again from Claude |
+| *"Could not check this account."* | Kommerce side — wait a minute, start again from Claude |
+| *"This account cannot connect Claude."* | The account is not an operator account |
+
+## Start with the brand
+
+Every tool is scoped to one brand. List the brands, take the id, and work from there — an agent that skips this step guesses, and guessing across brands is the one thing the surface is built to prevent.
+
+<Note>
+  Read the brand's context before writing direction or copy, and read its performance evidence before proposing an angle. The account already knows what converts; starting from brand context rather than instinct is the difference between a useful draft and a generic one.
+</Note>
+
+## What it can do
+
+| Area | Examples |
+| --- | --- |
+| **Read** | Brand guide, products, personas, briefs, creatives, landing pages, Meta performance |
+| **Write** | Briefs, personas, brand guide, learnings |
+| **Generate** | Creatives, test creatives — always quoted before spending |
+| **Review** | Score, comment on a region, regenerate, approve or reject |
+| **Test** | Suggest, create, brief, generate, publish, read the engine, conclude |
+| **Publish** | Prepare and publish to Meta — always paused |
+| **Research** | Competitor ads and curated boards |
+
+## What stays with a person
+
+<CardGroup cols={2}>
+  <Card title="Spending is confirmed twice" icon="shield-check">
+    Generation returns a **quote** first and spends nothing. It only runs when you re-request with confirmation.
+  </Card>
+  <Card title="Publishing never spends" icon="pause">
+    Everything published through MCP is created **paused**. Someone has to activate it in Ads Manager.
+  </Card>
+</CardGroup>
+
+It also cannot create campaigns. A new campaign is built in Ads Manager or in Kommerce's own publish modal.
+
+<Warning>
+  Competitor research bills per ad returned. The result limit *is* the price — asking for a large sample to "see what's there" is a real cost, not a browse.
+</Warning>
+
+## Why actions are attributed
+
+Every call records who did it, for which brand, through which channel, and what happened. A brief that appears overnight or a budget that moved is traceable to a person, to Kenny, or to the system.
+
+This matters more over MCP than in the app, because an agent can do a lot quickly and the audit trail is what makes that safe to allow.
+
+## Before you trust a long agent run
+
+<Steps>
+  <Step title="Check the brand">
+    Confirm it is pinned to the brand you meant. Everything downstream inherits it.
+  </Step>
+  <Step title="Read quotes, don't skim them">
+    The quote is the last gate before credits move.
+  </Step>
+  <Step title="Verify in the app">
+    Published ads, concluded tests and written learnings all show in Kommerce. Check the result rather than trusting the transcript.
+  </Step>
+</Steps>

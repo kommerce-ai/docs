@@ -35,14 +35,7 @@
         "tab": "Operator wiki",
         "groups": [
           {
-            "group": "Getting started",
-            "pages": [
-              "operator-wiki/overview",
-              "operator-wiki/roles-and-access"
-            ]
-          },
-          {
-            "group": "Onboarding",
+            "group": "Client onboarding",
             "pages": [
               "operator-wiki/onboarding/overview",
               "operator-wiki/onboarding/add-a-brand",
@@ -51,36 +44,40 @@
             ]
           },
           {
-            "group": "The five jobs",
+            "group": "Audit and research",
             "pages": [
-              "operator-wiki/angle-research",
+              "operator-wiki/audit/meta-audit",
+              "operator-wiki/audit/angle-research"
+            ]
+          },
+          {
+            "group": "Creative testing",
+            "pages": [
+              "operator-wiki/testing/overview",
+              "operator-wiki/testing/test-generation",
+              "operator-wiki/testing/creative-strategy",
               {
-                "group": "Creative production",
+                "group": "Content generation",
                 "pages": [
-                  "operator-wiki/creative/overview",
-                  "operator-wiki/creative/image-generation",
-                  "operator-wiki/creative/video-generation"
+                  "operator-wiki/testing/content-generation",
+                  "operator-wiki/testing/image-generation",
+                  "operator-wiki/testing/video-generation"
                 ]
               },
-              "operator-wiki/meta-audit",
-              "operator-wiki/media-buying",
-              "operator-wiki/reporting"
+              "operator-wiki/testing/publishing",
+              "operator-wiki/testing/optimisation"
             ]
           },
           {
-            "group": "Intelligence",
+            "group": "Scaling",
             "pages": [
-              "operator-wiki/kenny",
-              "operator-wiki/brand-brain"
+              "operator-wiki/scaling/overview"
             ]
           },
           {
-            "group": "Operator operations",
+            "group": "MCP",
             "pages": [
-              "operator-wiki/skills",
-              "operator-wiki/automations",
-              "operator-wiki/integrations",
-              "operator-wiki/credits"
+              "operator-wiki/mcp/overview"
             ]
           }
         ]
@@ -134,43 +131,111 @@
   "redirects": [
     {
       "source": "/operator-wiki",
-      "destination": "/operator-wiki/overview"
+      "destination": "/operator-wiki/onboarding/overview"
     },
     {
       "source": "/brands-wiki",
       "destination": "/brands-wiki/overview"
     },
     {
-      "source": "/agency-wiki/onboard-a-brand",
-      "destination": "/operator-wiki/onboarding/add-a-brand"
+      "source": "/operator-wiki/meta-audit",
+      "destination": "/operator-wiki/audit/meta-audit"
     },
     {
-      "source": "/agency-wiki/creative-production",
-      "destination": "/operator-wiki/creative/overview"
+      "source": "/operator-wiki/angle-research",
+      "destination": "/operator-wiki/audit/angle-research"
     },
     {
-      "source": "/agency-wiki",
-      "destination": "/operator-wiki/overview"
+      "source": "/operator-wiki/media-buying",
+      "destination": "/operator-wiki/testing/publishing"
     },
     {
-      "source": "/agency-wiki/:slug*",
-      "destination": "/operator-wiki/:slug*"
+      "source": "/operator-wiki/creative/image-generation",
+      "destination": "/operator-wiki/testing/image-generation"
+    },
+    {
+      "source": "/operator-wiki/creative/video-generation",
+      "destination": "/operator-wiki/testing/video-generation"
+    },
+    {
+      "source": "/operator-wiki/creative/overview",
+      "destination": "/operator-wiki/testing/content-generation"
+    },
+    {
+      "source": "/operator-wiki/creative-production",
+      "destination": "/operator-wiki/testing/content-generation"
+    },
+    {
+      "source": "/operator-wiki/creative/:slug*",
+      "destination": "/operator-wiki/testing/:slug*"
+    },
+    {
+      "source": "/operator-wiki/overview",
+      "destination": "/operator-wiki/onboarding/overview"
+    },
+    {
+      "source": "/operator-wiki/roles-and-access",
+      "destination": "/operator-wiki/onboarding/overview"
     },
     {
       "source": "/operator-wiki/onboard-a-brand",
       "destination": "/operator-wiki/onboarding/add-a-brand"
     },
     {
-      "source": "/operator-wiki/creative-production",
-      "destination": "/operator-wiki/creative/overview"
+      "source": "/operator-wiki/kenny",
+      "destination": "/operator-wiki/mcp/overview"
+    },
+    {
+      "source": "/operator-wiki/brand-brain",
+      "destination": "/operator-wiki/mcp/overview"
+    },
+    {
+      "source": "/operator-wiki/skills",
+      "destination": "/operator-wiki/testing/overview"
+    },
+    {
+      "source": "/operator-wiki/automations",
+      "destination": "/operator-wiki/testing/optimisation"
+    },
+    {
+      "source": "/operator-wiki/integrations",
+      "destination": "/operator-wiki/onboarding/meta-access"
+    },
+    {
+      "source": "/operator-wiki/credits",
+      "destination": "/operator-wiki/testing/content-generation"
+    },
+    {
+      "source": "/operator-wiki/reporting",
+      "destination": "/operator-wiki/testing/optimisation"
+    },
+    {
+      "source": "/agency-wiki/meta-audit",
+      "destination": "/operator-wiki/audit/meta-audit"
+    },
+    {
+      "source": "/agency-wiki/angle-research",
+      "destination": "/operator-wiki/audit/angle-research"
+    },
+    {
+      "source": "/agency-wiki/media-buying",
+      "destination": "/operator-wiki/testing/publishing"
+    },
+    {
+      "source": "/agency-wiki/onboard-a-brand",
+      "destination": "/operator-wiki/onboarding/add-a-brand"
+    },
+    {
+      "source": "/agency-wiki",
+      "destination": "/operator-wiki/onboarding/overview"
+    },
+    {
+      "source": "/agency-wiki/:slug*",
+      "destination": "/operator-wiki/:slug*"
     },
     {
       "source": "/brands-wiki/creative-production",
       "destination": "/brands-wiki/creative/overview"
-    },
-    {
-      "source": "/product/agency/onboard-a-brand",
-      "destination": "/operator-wiki/onboarding/add-a-brand"
     },
     {
       "source": "/product/agency/:slug*",
