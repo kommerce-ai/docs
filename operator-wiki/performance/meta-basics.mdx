@@ -1,0 +1,63 @@
+---
+title: "Meta basics and campaign structure"
+description: "The settings that decide whether a test can be read at all."
+---
+
+You do not need to be a Meta expert to run Kommerce. A few structural facts decide whether your tests mean anything.
+
+## The hierarchy
+
+| Level | Holds | Decides |
+| --- | --- | --- |
+| **Campaign** | Ad sets | Objective, and budget if shared |
+| **Ad set** | Ads | Audience, placements, and budget if per-ad-set |
+| **Ad** | Creative and copy | What people see |
+
+In Kommerce, one idea equals one ad set. Versions of that idea are ads inside it, sharing its budget. That is why ideas cost money and versions do not.
+
+## Budget: shared or per ad set
+
+This is the most consequential setting in a test.
+
+**Per ad set** gives each idea its own money, so each gets a fair read. Default to this for testing.
+
+**Shared across the campaign** lets Meta move budget to whatever looks best early.
+
+<Warning>
+  A shared budget will starve one side of a test before it produces a verdict. Meta optimises for immediate return. You are buying information. Those goals conflict, and Meta wins.
+</Warning>
+
+Shared budgets are a scaling tool, not a testing tool.
+
+## The learning phase
+
+Meta needs conversions before delivery stabilises. Until then performance swings for reasons unrelated to your creative.
+
+This is why nothing is judged for 72 hours.
+
+## Laying out a test
+
+Each idea gets its own ad set and budget. Across the ad sets in a test, keep these identical:
+
+- Audience and exclusions
+- Placements
+- Bid strategy
+- Campaign objective
+
+A test where one idea runs on different placements is not a test of the idea. You will attribute a placement effect to your creative and carry that wrong conclusion forward.
+
+## Naming
+
+Copy the pattern the brand's live ads already use. Change only the test number, awareness code, slug and version.
+
+Consistent naming is what lets patterns group ads by persona, awareness and angle later. Inconsistent naming destroys that quietly, and you will not notice until you want the analysis.
+
+## Campaigns
+
+Kommerce cannot create campaigns. A new campaign is built in Ads Manager or in Kommerce's publish flow. Everything else in a test can be created for you.
+
+## Why tracking decides everything
+
+Meta optimises toward the conversions it can see. Bad signal produces bad optimisation and bad reporting at once, in the same direction, invisibly.
+
+When purchase tracking is unreliable, Kommerce stops drawing conclusions from the checkout and purchase steps. Those measure tracking, not ads.

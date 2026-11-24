@@ -1,90 +1,120 @@
 ---
-title: "How onboarding works"
-description: "Three steps, two owners, and two separate finish lines — the model behind every brand you bring on."
+title: "Client onboarding"
+description: "From signed client to launch-ready: the three steps, who does them, and what actually gates going live."
 ---
 
-Onboarding produces the brand context everything else reads from. Angle research, creative briefs, and reporting all degrade to generic output when it is incomplete, so it is worth understanding the model rather than clicking through it.
+Onboarding produces the brand context everything else reads from. Angle research, creative briefs and reporting all degrade to generic output when it is incomplete.
 
-## Three steps
+## Adding the brand
+
+Open **Brands** at `/agency/brands` and click **Add a brand**.
+
+Enter the name and email, and the website if you have it. The website is worth supplying. It is what the AI prefill reads.
+
+You can **Add brand only** to create the record without starting, or **Start Onboarding** to begin.
+
+Creating a brand also provisions its workspace: a member-only Slack channel, a ClickUp space and a Drive folder.
+
+## Choosing who does the work
+
+A preset sets the default assignee for all three steps. You are choosing a starting point, not a permanent arrangement.
+
+| Preset | What it does |
+| --- | --- |
+| **Let the brand do it** | Every step assigned to the brand. An invite goes out |
+| **You do it for the brand** | Every step assigned to your team |
+
+The most reliable split in practice is you taking Brand details and Products & assets, and the brand taking Connect Meta. The first two are faster from the website scrape. The third has to happen inside their own Business Manager.
+
+Assignment can change on any step that is not yet complete. A completed step is locked.
+
+## The invite
+
+The brand gets an invite linking to a signup URL with a one-time code. Signing up through that link binds their account to you.
+
+<Warning>
+  A brand that signs up without the code lands as a self-serve brand under the house agency, not under you. There is no clean way to re-parent it. Always send the invite from Kommerce rather than telling a client to "just sign up".
+</Warning>
+
+## The three steps
 
 | Step | Produces | Can be AI-drafted |
 | --- | --- | --- |
-| **Brand details** | Identity, voice, ICP, competitors, budget | Yes — from the website |
-| **Products & assets** | Products, logo, photos, video, website | Yes — scrape plus uploads |
-| **Connect Meta ad account** | Partner access to your Business Manager | No — human only |
+| **Brand details** | Identity, voice, ICP, competitors, budget | Yes, from the website |
+| **Products & assets** | Products, logo, photos, website | Yes |
+| **Connect Meta ad account** | Partner access to your Business Manager | No |
 
-The first two can be prefilled by scraping the brand's site. The third never is: it requires a human to act inside Meta, so it has no draft state.
+A step moves from not started, to drafted if Kommerce prefilled it, to in progress, to done. Connect Meta works differently. It goes from not started, to submitted, to done, because Kommerce verifies it with Meta rather than taking someone's word for it.
 
-## Step status
+Any unfinished step can be marked blocked.
 
-Each step moves through its own state machine:
-
-A step moves from **not started**, to **drafted** if Kommerce prefilled it, to **in progress**, to **done**.
-
-A step can jump straight from drafted to done if whoever owns it accepts the draft as-is. **Connect Meta** works differently: it goes from not started, to submitted, to done — because Kommerce has to verify it with Meta rather than take someone's word for it.
-
-Any unfinished step can be marked **blocked** when it's waiting on the other side or on something external.
-
-What you see in the UI is derived from status and assignee:
+### What the labels mean
 
 | Label | Means |
 | --- | --- |
 | **This step needs you** | Assigned to you, not finished |
-| **Drafted — review** | AI prefilled it; someone needs to check it |
+| **Drafted — review** | AI prefilled it. Someone needs to check it |
 | **In progress** | Started, not finished |
 | **Waiting on brand** / **Waiting on agency** | Assigned to the other party |
 | **Done** | Complete |
 
-<Note>
-  The chip reads **Waiting on agency**, not "operator" — the product has not been renamed, so the label still uses the old word.
-</Note>
+The chip reads "Waiting on agency", not "operator". The product has not been renamed.
 
-## Who does the work
+## Connecting Meta
 
-Every step is assigned either to the brand or to your team, set from a preset when you add the brand and changeable per step afterwards.
+This is the step that stalls most often. It has no draft, it happens inside the brand's Business Manager, and it only completes when the server verifies it.
 
-<Note>
-  Assignment can be changed on any step that is **not yet complete**. A completed step is locked; the server rejects reassignment rather than silently reopening it. Reassign before it finishes, or reopen the step first.
-</Note>
+<Steps>
+  <Step title="The brand copies your agency ID">
+    Kommerce shows your Business Manager ID with a copy button. The control is labelled **Copy agency ID**.
+  </Step>
+  <Step title="They grant partner access in Meta">
+    Scoped to the ad account, page and pixel. They stay the owner and can revoke it any time.
+  </Step>
+  <Step title="They enter their own ad account ID">
+    In the form `act_` followed by the number.
+  </Step>
+  <Step title="Kommerce verifies">
+    A live call using your credentials checks whether that account now appears in your accessible client accounts.
+  </Step>
+</Steps>
 
-This is what makes mixed splits work — "we'll handle Meta access, the brand fills in their own details" is a supported configuration, not a workaround.
+The brand only ever submits their own ad account ID. Your list of other clients' accounts is never shown to them.
+
+### When it fails
+
+Work through these in order. The first is by far the most common.
+
+| Cause | Fix |
+| --- | --- |
+| Access granted to the wrong Business Manager | Re-check the agency ID they pasted against the one Kommerce shows |
+| Not yet propagated | Wait and retry |
+| Wrong ID type | It must be the ad account, `act_` prefixed |
+| Partner added but assets not assigned | Adding the partner is not enough on its own |
+| Already linked to another brand | Find the other brand. Do not unlink blindly |
+
+An ad account can be linked to one brand only. A successful lookup proves the ID is in your shared list. It does not prove this brand owns it.
 
 ## Two finish lines
 
-This is the part people conflate, and it matters because one of them is the go-live decision.
+**Intake complete** means Brand details and Products & assets are done. That is two steps, not three.
 
-<CardGroup cols={2}>
-  <Card title="Intake complete" icon="list-check">
-    **Brand details** and **Products & assets** are done — the two steps that put brand information in. Connect Meta is not part of it.
-  </Card>
-  <Card title="Launch ready" icon="rocket">
-    Intake done **and** Connect Meta complete. This is the go-live gate: it unlocks **Start kickoff** and is what sets the brand to onboarded.
-  </Card>
-</CardGroup>
+**Launch ready** means intake plus Connect Meta. This unlocks **Start kickoff** and is what marks the brand onboarded.
 
-So intake is two steps, not three. The gap between the two milestones is exactly one thing: Meta access verified.
+## What still blocks spending
 
-<Note>
-  The readiness ledger does **not** gate launch readiness. Required items that are still missing appear as the **still needed** list, which is a chase list rather than a lock. See [Launch readiness](/operator-wiki/client-success/launch-readiness).
-</Note>
+The readiness list is separate from the launch-ready status. These items are required, and every one is owned by the brand.
 
-## Progress
+**Required:** logo, product photos, website access, Meta partner access, business verification, Meta ad account, payment method.
 
-The progress bar counts **steps only** — completed steps out of all three, so it is not the same denominator as the intake milestone (which counts two).
+**Optional:** product video, Instagram, Meta Pixel.
 
-It deliberately does not blend in readiness items. Connect Meta alone produces four of them, so a blended bar would jump 40% in one action and move non-linearly. Granularity lives in the step count and the "still needed" list instead.
+Each item moves from missing, to received, to verified. Only verified counts.
 
-## Two acquisition paths
+<Warning>
+  Launch ready can be true while business verification is still pending, because that item does not feed the status. Meta enforces it regardless. Check the still-needed list separately before promising a launch date.
+</Warning>
 
-<CardGroup cols={2}>
-  <Card title="Managed service" icon="building">
-    You add the brand. It lands under your portfolio, gets an invite code and a member-only Slack channel, and follows your chosen preset.
-  </Card>
-  <Card title="Self-serve" icon="user">
-    The brand signs up directly. It lands under the house operator, every step is assigned to the brand, and no Slack channel is provisioned.
-  </Card>
-</CardGroup>
+Business verification and payment method are the two with real external latency. Meta can take days. Start business verification before anything else.
 
-<Card title="Next: Add a brand" icon="arrow-right" href="/operator-wiki/client-success/add-a-brand">
-  The actual mechanics of bringing one on.
-</Card>
+Treat the Meta Pixel as required in practice. Without it firing correctly, performance cannot be measured, and every decision made on top of bad tracking is unreliable.
