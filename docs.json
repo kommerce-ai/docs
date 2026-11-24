@@ -49,10 +49,11 @@
             "group": "03 \u00b7 Creative Testing",
             "pages": [
               "operator-wiki/creative-testing/overview",
-              "operator-wiki/creative-testing/generating-tests",
               "operator-wiki/creative-testing/strategy",
-              "operator-wiki/creative-testing/copy-and-briefs",
-              "operator-wiki/creative-testing/producing-ads"
+              "operator-wiki/creative-testing/briefs",
+              "operator-wiki/creative-testing/tests",
+              "operator-wiki/creative-testing/images",
+              "operator-wiki/creative-testing/video-and-creators"
             ]
           },
           {
@@ -169,18 +170,6 @@
       "destination": "/operator-wiki/creative-testing/producing-ads"
     },
     {
-      "source": "/operator-wiki/creative-testing/static-ad-creative",
-      "destination": "/operator-wiki/creative-testing/producing-ads"
-    },
-    {
-      "source": "/operator-wiki/creative-testing/ai-video",
-      "destination": "/operator-wiki/creative-testing/producing-ads"
-    },
-    {
-      "source": "/operator-wiki/creative-testing/ugc-and-creators",
-      "destination": "/operator-wiki/creative-testing/producing-ads"
-    },
-    {
       "source": "/operator-wiki/performance/meta-fundamentals",
       "destination": "/operator-wiki/performance/meta-basics"
     },
@@ -275,6 +264,30 @@
     {
       "source": "/product/brand/:slug*",
       "destination": "/operator-wiki/client-success/onboarding"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/copy-and-briefs",
+      "destination": "/operator-wiki/creative-testing/briefs"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/generating-tests",
+      "destination": "/operator-wiki/creative-testing/tests"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/producing-ads",
+      "destination": "/operator-wiki/creative-testing/images"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/static-ad-creative",
+      "destination": "/operator-wiki/creative-testing/images"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/ai-video",
+      "destination": "/operator-wiki/creative-testing/video-and-creators"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/ugc-and-creators",
+      "destination": "/operator-wiki/creative-testing/video-and-creators"
     }
   ],
   "contextual": {
