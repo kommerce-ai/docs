@@ -1,0 +1,46 @@
+---
+title: "Publishing tests"
+description: "Getting a test live in Meta. Everything arrives paused."
+---
+
+Publishing creates campaigns, ad sets and ads in Meta. All of them paused.
+
+<Warning>
+  Nothing spends on publish. Someone has to activate it in Ads Manager. Publish is not launch.
+</Warning>
+
+## The three steps
+
+<Steps>
+  <Step title="Choose the creative">
+    Pick assets from the brand's library, or generate new ones inline.
+  </Step>
+  <Step title="Configure">
+    Campaign, budget type, audience, placements. See [Meta basics](/operator-wiki/performance/meta-basics).
+  </Step>
+  <Step title="Publish">
+    Kommerce builds the payload and creates the entities. Everything arrives paused.
+  </Step>
+</Steps>
+
+Run the preparation step, show someone the rows, then publish.
+
+## Adding an ad set
+
+If the campaign has no ad set that fits, you can add one. Ask without confirming first. That creates nothing and returns the budget, audience and pixel it resolved. Show that, then confirm.
+
+<Note>
+  Say out loud when the parent campaign has a shared budget. A new ad set re-divides money across everything already in that campaign.
+</Note>
+
+## When publishing fails
+
+The usual cause is Page access rather than ad account access.
+
+Verification during onboarding checks the ad account. Creating an ad creative publishes as the Page, which is granted separately. A brand can pass onboarding cleanly and still fail at publish time.
+
+This is an asymmetry, not a regression. The fix is in Meta, not in Kommerce.
+
+## After publishing
+
+Check the ads reached Meta and were approved. Then activate deliberately, and read the daily calls from the next day onward.
