@@ -1,0 +1,48 @@
+---
+title: "Meta Ads fundamentals"
+description: "The account structure and settings that decide whether a test can be read at all."
+---
+
+You don't need to be a Meta expert to run Kommerce, but a few structural facts decide whether your tests mean anything.
+
+## The hierarchy
+
+| Level | Holds | Decides |
+| --- | --- | --- |
+| **Campaign** | Ad sets | Objective, and budget if shared |
+| **Ad set** | Ads | Audience, placements, and budget if per-ad-set |
+| **Ad** | Creative and copy | What people actually see |
+
+In Kommerce, **one idea equals one ad set**. Different executions of that idea are ads inside it, sharing its budget. That's why ideas cost money and versions don't.
+
+## Budget: shared or per-ad-set
+
+The single most consequential setting in a test.
+
+**Per ad set** gives each idea its own money. Each gets a fair read. **Default to this for testing.**
+
+**Shared across the campaign** lets Meta move budget to whatever looks best early.
+
+<Warning>
+  A shared budget will starve one side of a test before it produces a verdict. Meta is optimising for immediate return; you're buying information. Those goals conflict, and Meta wins.
+
+  It's the right tool for scaling and the wrong one for testing.
+</Warning>
+
+## The learning phase
+
+Meta needs conversions before delivery stabilises. Until then, performance swings for reasons that have nothing to do with your creative.
+
+This is why **nothing is judged for 72 hours**. Early numbers are noise, and acting on them kills good ideas.
+
+## Why tracking quality decides everything
+
+Meta optimises toward the conversions it can see. Bad signal means bad optimisation and bad reporting, in the same direction, invisibly.
+
+<Note>
+  When purchase tracking is unreliable, Kommerce stops drawing conclusions from the checkout and purchase steps — it measures tracking, not ads. That's why a clean [account audit](/operator-wiki/client-success/account-audit) makes every later verdict more trustworthy.
+</Note>
+
+## Publishing is not spending
+
+Everything Kommerce publishes arrives **paused**. Someone activates it in Ads Manager deliberately. There is no path where a test starts spending because a button was clicked by accident.

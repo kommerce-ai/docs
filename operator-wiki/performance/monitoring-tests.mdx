@@ -1,0 +1,117 @@
+---
+title: "Optimisation"
+description: "Reading the daily engine report, deciding what to approve, and knowing when to overrule it."
+---
+
+Once a test is live, Kommerce reads it every day and tells you what each idea deserves. Your job is to read that, approve what makes sense, and step in where you know something it doesn't.
+
+## What you do each day
+
+<Steps>
+  <Step title="Open the test and read the day's calls">
+    Each idea gets a plain-English recommendation and the numbers behind it.
+  </Step>
+  <Step title="Approve, or don't">
+    Nothing moves budget until it's applied. An approved action can only act inside what the test already authorised.
+  </Step>
+  <Step title="Step in where you know more">
+    A stock problem, a client decision, a seasonal spike — the engine can't see any of that.
+  </Step>
+</Steps>
+
+## What the recommendations mean
+
+These are the exact phrases you'll see:
+
+| What it says | What it means | What to do |
+| --- | --- | --- |
+| **Keep running** | Too early, or going fine | Nothing |
+| **Add funding** | Close, deserves more room | Usually approve |
+| **Passed: confirming on fresh spend** | Cleared the first bar, now proving it again | Approve — this is the good path |
+| **Back to testing** | Didn't hold up on second look | Approve; it wasn't ready |
+| **Winner: move it to scale** | Proven twice | Approve, then see [Scaling](/operator-wiki/performance/scaling) |
+| **Pause early** | Losing badly enough to stop now | Approve unless you know why |
+| **Kill** | Clearly not working | Approve |
+| **Stop: out of funding, no verdict** | Spent its budget, never showed anything | Let it go |
+| **Stop: promising, unproven** | Ran out of money while still looking good | **Keep this one in mind** |
+
+<Warning>
+  **"Promising, unproven" is not a failure.** It means the idea looked like it was working and simply ran out of budget before it could prove it.
+
+  These are your best candidates to retest with more funding. Treating them the same as a kill throws away the ideas most likely to win next time.
+</Warning>
+
+## Why an idea has to win twice
+
+An idea that passes its first run doesn't go straight to scale. It gets a second, separate run on fresh spend — that's the "confirming" stage.
+
+This exists because a handful of early sales can make a mediocre idea look excellent. Something that got lucky passes the first round and then fails the second, and goes **back to testing** instead of to scale.
+
+By the time you see "Winner: move it to scale", the idea has been right twice, on different money.
+
+## The bar everything is measured against
+
+One number drives every decision: **break-even CPA** — what an order can cost before you stop making money.
+
+<Warning>
+  Set this honestly. It's not a target, it's the break-even point. Set it too optimistically and the engine will kill ideas that were making money, and promote ideas that weren't.
+</Warning>
+
+Kommerce works it out from the test's own figure if you set one, then from the brand's unit economics, and failing both it estimates from order value and break-even ROAS. **An estimated bar is marked as assumed** — worth checking before you trust a verdict built on it.
+
+## How much it spends before deciding
+
+Everything is a multiple of break-even CPA. If break-even is $40:
+
+| | Default | At $40 break-even |
+| --- | --- | --- |
+| Budget per idea | 2.5× | $100 |
+| Pause considered after | 2× | $80 |
+| Kill considered after | 3× | $120 |
+| Proving a winner, up to | 10× | $400 |
+
+A test window runs 6 days, and **nothing is judged in the first 72 hours**.
+
+<Warning>
+  If an idea looks terrible on day one, that's noise — Meta hasn't finished learning yet. Pausing by hand inside that window destroys the evidence the engine was about to collect.
+</Warning>
+
+### Ideas that earn their extension
+
+If an idea's cost per order is already under break-even, it's making money while it proves itself. Kommerce keeps funding it — up to ten times break-even — rather than cutting it off at a fixed budget.
+
+That ceiling isn't arbitrary: proving a winner takes roughly 15 orders, and that's about what it costs when something is genuinely working.
+
+## When the whole account is the problem
+
+Kommerce also watches the account, not just your test, and pulls back when CPMs double against the account's normal level, or account-wide cost per order sits above one and a half times break-even for three days running.
+
+<Tip>
+  If that brake comes on, the account is in trouble, not your test. Chasing individual ideas while it's on wastes your time — find out what changed at account level first.
+</Tip>
+
+## Reading past the headline number
+
+Each idea is read step by step down the funnel, so you find out *where* it's failing rather than just that it failed. Cheap clicks with no orders is a completely different problem from no clicks at all.
+
+<Note>
+  When purchase tracking is unreliable, the checkout and purchase steps are measuring your **tracking**, not your ads — so Kommerce leaves them out rather than drawing conclusions from them.
+
+  This is the practical reason a clean [Meta audit](/operator-wiki/client-success/account-audit) matters: it makes every verdict afterwards more trustworthy.
+</Note>
+
+## Closing a test
+
+When the engine has called it, write the verdict. A test ends as a **winner**, a **loser**, or **inconclusive**, and points at one of three next steps: scale it, iterate on it, or stop.
+
+<Warning>
+  Write the verdict in your own words rather than accepting the draft. The draft knows the numbers. It doesn't know the client conversation, the stock issue, or the promotion that explains them — and that context is the part worth keeping.
+</Warning>
+
+Closing a test writes a **learning** that every future brief can draw on. This is the step that turns a test from a one-off into something the account remembers.
+
+Nothing is ever deleted. Tests get archived, learnings get superseded.
+
+<Card title="Next: Scaling" icon="arrow-right" href="/operator-wiki/performance/scaling">
+  What to do with a winner.
+</Card>

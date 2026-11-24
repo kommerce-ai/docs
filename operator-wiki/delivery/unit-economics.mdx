@@ -1,0 +1,50 @@
+---
+title: "Unit economics and break-even ROAS"
+description: "The arithmetic every verdict depends on, and what happens when it's wrong."
+---
+
+One number decides whether a test passed: **break-even CPA**, the most an order can cost before it stops making money.
+
+## Working it out
+
+Break-even CPA comes from order value and margin. Break-even ROAS is the same fact expressed as a ratio.
+
+| Term | Meaning |
+| --- | --- |
+| **AOV** | Average order value |
+| **COGS** | Cost of goods — what fulfilling an order costs |
+| **Break-even ROAS** | The return at which you make nothing |
+| **Break-even CPA** | The order cost at which you make nothing |
+
+## Where Kommerce gets the number
+
+In order of preference:
+
+<Steps>
+  <Step title="Frozen on the test">
+    A figure set when the test was created. Most reliable, because it can't drift mid-test.
+  </Step>
+  <Step title="The brand's unit economics">
+    Taken from the brand record.
+  </Step>
+  <Step title="Estimated from order value and break-even ROAS">
+    Used when neither of the above exists — and **marked as assumed**.
+  </Step>
+</Steps>
+
+<Warning>
+  Check whether a bar is assumed before you trust a verdict built on it. An assumed bar isn't wrong, but it's an estimate, and every kill and graduation inherits its error.
+</Warning>
+
+## Why an optimistic bar is expensive
+
+Set the bar lower than true break-even and two things happen at once, both invisible:
+
+- Ideas that were making money get killed for missing a bar they never had to clear
+- The engine's confidence calculations are measured against the wrong line, so "passed" means less than it looks
+
+The second is worse, because it produces winners that don't scale — and you won't find out until you've put real budget behind one.
+
+<Tip>
+  If a client won't give you real COGS, ask for a range and use the pessimistic end. An overly cautious bar costs you some good ideas. An overly optimistic one costs you the account's credibility.
+</Tip>
