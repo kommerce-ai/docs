@@ -19,109 +19,83 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Operator Wiki",
         "groups": [
           {
-            "group": "Getting started",
-            "public": true,
+            "group": "Start here",
             "pages": [
-              "index",
-              "quickstart"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Operator wiki",
-        "groups": [
-          {
-            "group": "Client onboarding",
-            "pages": [
-              "operator-wiki/onboarding/overview",
-              "operator-wiki/onboarding/add-a-brand",
-              "operator-wiki/onboarding/meta-access",
-              "operator-wiki/onboarding/launch-readiness"
+              "index"
             ]
           },
           {
-            "group": "Audit and research",
+            "group": "01 \u00b7 Client Success",
             "pages": [
-              "operator-wiki/audit/meta-audit",
-              "operator-wiki/audit/angle-research"
+              "operator-wiki/client-success/onboarding",
+              "operator-wiki/client-success/add-a-brand",
+              "operator-wiki/client-success/meta-access",
+              "operator-wiki/client-success/launch-readiness",
+              "operator-wiki/client-success/account-audit",
+              "operator-wiki/client-success/positioning-and-economics",
+              "operator-wiki/client-success/communication",
+              "operator-wiki/client-success/kickoff",
+              "operator-wiki/client-success/account-management"
             ]
           },
           {
-            "group": "Creative testing",
+            "group": "02 \u00b7 Delivery",
             "pages": [
-              "operator-wiki/testing/overview",
-              "operator-wiki/testing/test-generation",
-              "operator-wiki/testing/creative-strategy",
-              {
-                "group": "Content generation",
-                "pages": [
-                  "operator-wiki/testing/content-generation",
-                  "operator-wiki/testing/image-generation",
-                  "operator-wiki/testing/video-generation"
-                ]
-              },
-              "operator-wiki/testing/publishing",
-              "operator-wiki/testing/optimisation"
+              "operator-wiki/delivery/process",
+              "operator-wiki/delivery/growth-goals",
+              "operator-wiki/delivery/research",
+              "operator-wiki/delivery/customer-research",
+              "operator-wiki/delivery/unit-economics",
+              "operator-wiki/delivery/timelines",
+              "operator-wiki/delivery/approvals"
             ]
           },
           {
-            "group": "Scaling",
+            "group": "03 \u00b7 Creative Testing",
             "pages": [
-              "operator-wiki/scaling/overview"
+              "operator-wiki/creative-testing/what-is-creative-testing",
+              "operator-wiki/creative-testing/why-testing",
+              "operator-wiki/creative-testing/generating-tests",
+              "operator-wiki/creative-testing/creative-strategy",
+              "operator-wiki/creative-testing/awareness-levels",
+              "operator-wiki/creative-testing/copywriting",
+              "operator-wiki/creative-testing/creative-briefs",
+              "operator-wiki/creative-testing/content-generation",
+              "operator-wiki/creative-testing/static-ad-creative",
+              "operator-wiki/creative-testing/ai-video",
+              "operator-wiki/creative-testing/ugc-and-creators",
+              "operator-wiki/creative-testing/frameworks"
             ]
           },
           {
-            "group": "MCP",
+            "group": "04 \u00b7 Performance & Media Buying",
             "pages": [
-              "operator-wiki/mcp/overview"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Brands wiki",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "brands-wiki/overview",
-              "brands-wiki/brand-guide"
+              "operator-wiki/performance/meta-fundamentals",
+              "operator-wiki/performance/structuring-campaigns",
+              "operator-wiki/performance/publishing-tests",
+              "operator-wiki/performance/monitoring-tests",
+              "operator-wiki/performance/test-metrics",
+              "operator-wiki/performance/budget-allocation",
+              "operator-wiki/performance/bayesian-signals",
+              "operator-wiki/performance/kill-iterate-graduate",
+              "operator-wiki/performance/scaling",
+              "operator-wiki/performance/budget-scaling"
             ]
           },
           {
-            "group": "Onboarding",
+            "group": "05 \u00b7 Resources & Glossary",
             "pages": [
-              "brands-wiki/onboarding/overview",
-              "brands-wiki/onboarding/brand-details",
-              "brands-wiki/onboarding/products-and-assets",
-              "brands-wiki/onboarding/connect-meta",
-              "brands-wiki/onboarding/launch-checklist"
-            ]
-          },
-          {
-            "group": "Your workspace",
-            "pages": [
-              {
-                "group": "Creative production",
-                "pages": [
-                  "brands-wiki/creative/overview",
-                  "brands-wiki/creative/image-generation",
-                  "brands-wiki/creative/video-generation"
-                ]
-              },
-              "brands-wiki/media-buying",
-              "brands-wiki/reporting"
-            ]
-          },
-          {
-            "group": "Intelligence",
-            "pages": [
-              "brands-wiki/kenny",
-              "brands-wiki/brand-brain"
+              "operator-wiki/resources/paid-media-glossary",
+              "operator-wiki/resources/creative-glossary",
+              "operator-wiki/resources/templates",
+              "operator-wiki/resources/copywriting-frameworks",
+              "operator-wiki/resources/examples",
+              "operator-wiki/resources/skills",
+              "operator-wiki/resources/mcp",
+              "operator-wiki/resources/tools"
             ]
           }
         ]
@@ -131,119 +105,107 @@
   "redirects": [
     {
       "source": "/operator-wiki",
-      "destination": "/operator-wiki/onboarding/overview"
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/brands-wiki",
-      "destination": "/brands-wiki/overview"
+      "source": "/quickstart",
+      "destination": "/"
     },
     {
-      "source": "/operator-wiki/meta-audit",
-      "destination": "/operator-wiki/audit/meta-audit"
+      "source": "/operator-wiki/onboarding/overview",
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/operator-wiki/angle-research",
-      "destination": "/operator-wiki/audit/angle-research"
+      "source": "/operator-wiki/onboarding/add-a-brand",
+      "destination": "/operator-wiki/client-success/add-a-brand"
     },
     {
-      "source": "/operator-wiki/media-buying",
-      "destination": "/operator-wiki/testing/publishing"
+      "source": "/operator-wiki/onboarding/meta-access",
+      "destination": "/operator-wiki/client-success/meta-access"
     },
     {
-      "source": "/operator-wiki/creative/image-generation",
-      "destination": "/operator-wiki/testing/image-generation"
+      "source": "/operator-wiki/onboarding/launch-readiness",
+      "destination": "/operator-wiki/client-success/launch-readiness"
     },
     {
-      "source": "/operator-wiki/creative/video-generation",
-      "destination": "/operator-wiki/testing/video-generation"
+      "source": "/operator-wiki/audit/meta-audit",
+      "destination": "/operator-wiki/client-success/account-audit"
     },
     {
-      "source": "/operator-wiki/creative/overview",
-      "destination": "/operator-wiki/testing/content-generation"
+      "source": "/operator-wiki/audit/angle-research",
+      "destination": "/operator-wiki/delivery/research"
     },
     {
-      "source": "/operator-wiki/creative-production",
-      "destination": "/operator-wiki/testing/content-generation"
+      "source": "/operator-wiki/testing/overview",
+      "destination": "/operator-wiki/creative-testing/what-is-creative-testing"
     },
     {
-      "source": "/operator-wiki/creative/:slug*",
-      "destination": "/operator-wiki/testing/:slug*"
+      "source": "/operator-wiki/testing/test-generation",
+      "destination": "/operator-wiki/creative-testing/generating-tests"
     },
     {
-      "source": "/operator-wiki/overview",
-      "destination": "/operator-wiki/onboarding/overview"
+      "source": "/operator-wiki/testing/creative-strategy",
+      "destination": "/operator-wiki/creative-testing/creative-briefs"
     },
     {
-      "source": "/operator-wiki/roles-and-access",
-      "destination": "/operator-wiki/onboarding/overview"
+      "source": "/operator-wiki/testing/content-generation",
+      "destination": "/operator-wiki/creative-testing/content-generation"
     },
     {
-      "source": "/operator-wiki/onboard-a-brand",
-      "destination": "/operator-wiki/onboarding/add-a-brand"
+      "source": "/operator-wiki/testing/image-generation",
+      "destination": "/operator-wiki/creative-testing/static-ad-creative"
     },
     {
-      "source": "/operator-wiki/kenny",
-      "destination": "/operator-wiki/mcp/overview"
+      "source": "/operator-wiki/testing/video-generation",
+      "destination": "/operator-wiki/creative-testing/ai-video"
     },
     {
-      "source": "/operator-wiki/brand-brain",
-      "destination": "/operator-wiki/mcp/overview"
+      "source": "/operator-wiki/testing/publishing",
+      "destination": "/operator-wiki/performance/publishing-tests"
     },
     {
-      "source": "/operator-wiki/skills",
-      "destination": "/operator-wiki/testing/overview"
+      "source": "/operator-wiki/testing/optimisation",
+      "destination": "/operator-wiki/performance/monitoring-tests"
     },
     {
-      "source": "/operator-wiki/automations",
-      "destination": "/operator-wiki/testing/optimisation"
+      "source": "/operator-wiki/scaling/overview",
+      "destination": "/operator-wiki/performance/scaling"
     },
     {
-      "source": "/operator-wiki/integrations",
-      "destination": "/operator-wiki/onboarding/meta-access"
+      "source": "/operator-wiki/mcp/overview",
+      "destination": "/operator-wiki/resources/mcp"
     },
     {
-      "source": "/operator-wiki/credits",
-      "destination": "/operator-wiki/testing/content-generation"
+      "source": "/operator-wiki/testing/:slug*",
+      "destination": "/operator-wiki/creative-testing/:slug*"
     },
     {
-      "source": "/operator-wiki/reporting",
-      "destination": "/operator-wiki/testing/optimisation"
+      "source": "/brands-wiki/kenny",
+      "destination": "/operator-wiki/resources/mcp"
     },
     {
-      "source": "/agency-wiki/meta-audit",
-      "destination": "/operator-wiki/audit/meta-audit"
+      "source": "/brands-wiki/overview",
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/agency-wiki/angle-research",
-      "destination": "/operator-wiki/audit/angle-research"
-    },
-    {
-      "source": "/agency-wiki/media-buying",
-      "destination": "/operator-wiki/testing/publishing"
-    },
-    {
-      "source": "/agency-wiki/onboard-a-brand",
-      "destination": "/operator-wiki/onboarding/add-a-brand"
-    },
-    {
-      "source": "/agency-wiki",
-      "destination": "/operator-wiki/onboarding/overview"
+      "source": "/brands-wiki/:slug*",
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
       "source": "/agency-wiki/:slug*",
-      "destination": "/operator-wiki/:slug*"
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/brands-wiki/creative-production",
-      "destination": "/brands-wiki/creative/overview"
+      "source": "/agency-wiki",
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
       "source": "/product/agency/:slug*",
-      "destination": "/operator-wiki/:slug*"
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
       "source": "/product/brand/:slug*",
-      "destination": "/brands-wiki/:slug*"
+      "destination": "/operator-wiki/client-success/onboarding"
     }
   ],
   "contextual": {
