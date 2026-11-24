@@ -31,68 +31,45 @@
             "group": "01 \u00b7 Client Success",
             "pages": [
               "operator-wiki/client-success/onboarding",
-              "operator-wiki/client-success/add-a-brand",
-              "operator-wiki/client-success/meta-access",
-              "operator-wiki/client-success/launch-readiness",
               "operator-wiki/client-success/account-audit",
-              "operator-wiki/client-success/positioning-and-economics",
-              "operator-wiki/client-success/communication",
-              "operator-wiki/client-success/kickoff",
-              "operator-wiki/client-success/account-management"
+              "operator-wiki/client-success/the-brand",
+              "operator-wiki/client-success/running-the-account"
             ]
           },
           {
             "group": "02 \u00b7 Delivery",
             "pages": [
               "operator-wiki/delivery/process",
-              "operator-wiki/delivery/growth-goals",
+              "operator-wiki/delivery/goals-and-economics",
               "operator-wiki/delivery/research",
-              "operator-wiki/delivery/customer-research",
-              "operator-wiki/delivery/unit-economics",
-              "operator-wiki/delivery/timelines",
-              "operator-wiki/delivery/approvals"
+              "operator-wiki/delivery/standards"
             ]
           },
           {
             "group": "03 \u00b7 Creative Testing",
             "pages": [
-              "operator-wiki/creative-testing/what-is-creative-testing",
-              "operator-wiki/creative-testing/why-testing",
+              "operator-wiki/creative-testing/overview",
               "operator-wiki/creative-testing/generating-tests",
-              "operator-wiki/creative-testing/creative-strategy",
-              "operator-wiki/creative-testing/awareness-levels",
-              "operator-wiki/creative-testing/copywriting",
-              "operator-wiki/creative-testing/creative-briefs",
-              "operator-wiki/creative-testing/content-generation",
-              "operator-wiki/creative-testing/static-ad-creative",
-              "operator-wiki/creative-testing/ai-video",
-              "operator-wiki/creative-testing/ugc-and-creators",
-              "operator-wiki/creative-testing/frameworks"
+              "operator-wiki/creative-testing/strategy",
+              "operator-wiki/creative-testing/copy-and-briefs",
+              "operator-wiki/creative-testing/producing-ads"
             ]
           },
           {
             "group": "04 \u00b7 Performance & Media Buying",
             "pages": [
-              "operator-wiki/performance/meta-fundamentals",
-              "operator-wiki/performance/structuring-campaigns",
-              "operator-wiki/performance/publishing-tests",
-              "operator-wiki/performance/monitoring-tests",
-              "operator-wiki/performance/test-metrics",
-              "operator-wiki/performance/budget-allocation",
-              "operator-wiki/performance/bayesian-signals",
-              "operator-wiki/performance/kill-iterate-graduate",
-              "operator-wiki/performance/scaling",
-              "operator-wiki/performance/budget-scaling"
+              "operator-wiki/performance/meta-basics",
+              "operator-wiki/performance/publishing",
+              "operator-wiki/performance/monitoring",
+              "operator-wiki/performance/decisions",
+              "operator-wiki/performance/scaling"
             ]
           },
           {
             "group": "05 \u00b7 Resources & Glossary",
             "pages": [
-              "operator-wiki/resources/paid-media-glossary",
-              "operator-wiki/resources/creative-glossary",
+              "operator-wiki/resources/glossary",
               "operator-wiki/resources/templates",
-              "operator-wiki/resources/copywriting-frameworks",
-              "operator-wiki/resources/examples",
               "operator-wiki/resources/skills",
               "operator-wiki/resources/mcp",
               "operator-wiki/resources/tools"
@@ -112,63 +89,163 @@
       "destination": "/"
     },
     {
-      "source": "/operator-wiki/onboarding/overview",
+      "source": "/operator-wiki/client-success/add-a-brand",
       "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/operator-wiki/onboarding/add-a-brand",
-      "destination": "/operator-wiki/client-success/add-a-brand"
+      "source": "/operator-wiki/client-success/meta-access",
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/operator-wiki/onboarding/meta-access",
-      "destination": "/operator-wiki/client-success/meta-access"
+      "source": "/operator-wiki/client-success/launch-readiness",
+      "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/operator-wiki/onboarding/launch-readiness",
-      "destination": "/operator-wiki/client-success/launch-readiness"
+      "source": "/operator-wiki/client-success/positioning-and-economics",
+      "destination": "/operator-wiki/client-success/the-brand"
     },
     {
-      "source": "/operator-wiki/audit/meta-audit",
-      "destination": "/operator-wiki/client-success/account-audit"
+      "source": "/operator-wiki/client-success/communication",
+      "destination": "/operator-wiki/client-success/running-the-account"
     },
     {
-      "source": "/operator-wiki/audit/angle-research",
+      "source": "/operator-wiki/client-success/kickoff",
+      "destination": "/operator-wiki/client-success/running-the-account"
+    },
+    {
+      "source": "/operator-wiki/client-success/account-management",
+      "destination": "/operator-wiki/client-success/running-the-account"
+    },
+    {
+      "source": "/operator-wiki/delivery/growth-goals",
+      "destination": "/operator-wiki/delivery/goals-and-economics"
+    },
+    {
+      "source": "/operator-wiki/delivery/unit-economics",
+      "destination": "/operator-wiki/delivery/goals-and-economics"
+    },
+    {
+      "source": "/operator-wiki/delivery/customer-research",
       "destination": "/operator-wiki/delivery/research"
     },
     {
-      "source": "/operator-wiki/testing/overview",
-      "destination": "/operator-wiki/creative-testing/what-is-creative-testing"
+      "source": "/operator-wiki/delivery/timelines",
+      "destination": "/operator-wiki/delivery/standards"
     },
     {
-      "source": "/operator-wiki/testing/test-generation",
-      "destination": "/operator-wiki/creative-testing/generating-tests"
+      "source": "/operator-wiki/delivery/approvals",
+      "destination": "/operator-wiki/delivery/standards"
     },
     {
-      "source": "/operator-wiki/testing/creative-strategy",
-      "destination": "/operator-wiki/creative-testing/creative-briefs"
+      "source": "/operator-wiki/creative-testing/what-is-creative-testing",
+      "destination": "/operator-wiki/creative-testing/overview"
     },
     {
-      "source": "/operator-wiki/testing/content-generation",
-      "destination": "/operator-wiki/creative-testing/content-generation"
+      "source": "/operator-wiki/creative-testing/why-testing",
+      "destination": "/operator-wiki/creative-testing/overview"
     },
     {
-      "source": "/operator-wiki/testing/image-generation",
-      "destination": "/operator-wiki/creative-testing/static-ad-creative"
+      "source": "/operator-wiki/creative-testing/frameworks",
+      "destination": "/operator-wiki/creative-testing/overview"
     },
     {
-      "source": "/operator-wiki/testing/video-generation",
-      "destination": "/operator-wiki/creative-testing/ai-video"
+      "source": "/operator-wiki/creative-testing/creative-strategy",
+      "destination": "/operator-wiki/creative-testing/strategy"
     },
     {
-      "source": "/operator-wiki/testing/publishing",
-      "destination": "/operator-wiki/performance/publishing-tests"
+      "source": "/operator-wiki/creative-testing/awareness-levels",
+      "destination": "/operator-wiki/creative-testing/strategy"
     },
     {
-      "source": "/operator-wiki/testing/optimisation",
-      "destination": "/operator-wiki/performance/monitoring-tests"
+      "source": "/operator-wiki/creative-testing/copywriting",
+      "destination": "/operator-wiki/creative-testing/copy-and-briefs"
     },
     {
-      "source": "/operator-wiki/scaling/overview",
+      "source": "/operator-wiki/creative-testing/creative-briefs",
+      "destination": "/operator-wiki/creative-testing/copy-and-briefs"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/content-generation",
+      "destination": "/operator-wiki/creative-testing/producing-ads"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/static-ad-creative",
+      "destination": "/operator-wiki/creative-testing/producing-ads"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/ai-video",
+      "destination": "/operator-wiki/creative-testing/producing-ads"
+    },
+    {
+      "source": "/operator-wiki/creative-testing/ugc-and-creators",
+      "destination": "/operator-wiki/creative-testing/producing-ads"
+    },
+    {
+      "source": "/operator-wiki/performance/meta-fundamentals",
+      "destination": "/operator-wiki/performance/meta-basics"
+    },
+    {
+      "source": "/operator-wiki/performance/structuring-campaigns",
+      "destination": "/operator-wiki/performance/meta-basics"
+    },
+    {
+      "source": "/operator-wiki/performance/publishing-tests",
+      "destination": "/operator-wiki/performance/publishing"
+    },
+    {
+      "source": "/operator-wiki/performance/monitoring-tests",
+      "destination": "/operator-wiki/performance/monitoring"
+    },
+    {
+      "source": "/operator-wiki/performance/test-metrics",
+      "destination": "/operator-wiki/performance/monitoring"
+    },
+    {
+      "source": "/operator-wiki/performance/bayesian-signals",
+      "destination": "/operator-wiki/performance/monitoring"
+    },
+    {
+      "source": "/operator-wiki/performance/budget-allocation",
+      "destination": "/operator-wiki/delivery/goals-and-economics"
+    },
+    {
+      "source": "/operator-wiki/performance/kill-iterate-graduate",
+      "destination": "/operator-wiki/performance/decisions"
+    },
+    {
+      "source": "/operator-wiki/performance/budget-scaling",
+      "destination": "/operator-wiki/performance/scaling"
+    },
+    {
+      "source": "/operator-wiki/resources/paid-media-glossary",
+      "destination": "/operator-wiki/resources/glossary"
+    },
+    {
+      "source": "/operator-wiki/resources/creative-glossary",
+      "destination": "/operator-wiki/resources/glossary"
+    },
+    {
+      "source": "/operator-wiki/resources/copywriting-frameworks",
+      "destination": "/operator-wiki/resources/templates"
+    },
+    {
+      "source": "/operator-wiki/resources/examples",
+      "destination": "/operator-wiki/resources/templates"
+    },
+    {
+      "source": "/operator-wiki/onboarding/:slug*",
+      "destination": "/operator-wiki/client-success/onboarding"
+    },
+    {
+      "source": "/operator-wiki/audit/:slug*",
+      "destination": "/operator-wiki/client-success/onboarding"
+    },
+    {
+      "source": "/operator-wiki/testing/:slug*",
+      "destination": "/operator-wiki/creative-testing/overview"
+    },
+    {
+      "source": "/operator-wiki/scaling/:slug*",
       "destination": "/operator-wiki/performance/scaling"
     },
     {
@@ -176,19 +253,11 @@
       "destination": "/operator-wiki/resources/mcp"
     },
     {
-      "source": "/operator-wiki/testing/:slug*",
-      "destination": "/operator-wiki/creative-testing/:slug*"
-    },
-    {
-      "source": "/brands-wiki/kenny",
-      "destination": "/operator-wiki/resources/mcp"
-    },
-    {
-      "source": "/brands-wiki/overview",
+      "source": "/brands-wiki/:slug*",
       "destination": "/operator-wiki/client-success/onboarding"
     },
     {
-      "source": "/brands-wiki/:slug*",
+      "source": "/brands-wiki",
       "destination": "/operator-wiki/client-success/onboarding"
     },
     {
