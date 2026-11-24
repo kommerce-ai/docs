@@ -1,0 +1,102 @@
+---
+title: "3. Generating images"
+sidebarTitle: "3. Images"
+description: "Turning a brief into statics that stop the scroll and survive Meta's crop."
+---
+
+The brief says what the ad argues. Generation builds it.
+
+## What the plan needs
+
+Before generating, each ad needs a scene decided. Six things:
+
+| Decision | Example |
+| --- | --- |
+| **Shot type** | A close single-bottle shot, because the label is the identity |
+| **Setting** | A bedside table in the morning |
+| **Props** | Pale roses, white linen, an open book |
+| **Light** | Soft daylight from the left |
+| **Backdrop** | A pale blush wall, tone on tone with the label |
+| **Copy zone** | The top 35%, a wall out of focus |
+
+Plus placement: where the product sits, and how much of the frame it fills.
+
+## Product truth overrides the brief
+
+The model will get physical facts wrong unless the scene stops it.
+
+- **A tiny product.** Frame waist-up or wider. Avoid tight hand shots and put a known object in frame. Models size a product to the hand holding it, so a 25 mm pendant comes out at 35 to 50 mm in a close hand shot whatever the words say.
+- **The identity is on the label.** Use a front-facing close shot with the label readable.
+- **Several variants.** Use a lineup from a real group photo. Generated lineups drift in shape.
+
+## Meta's safe zones
+
+Text outside these gets covered or cropped.
+
+**4:5 (1080 × 1350).** Keep text out of the bottom 200 px. Meta's call to action covers it.
+
+**9:16 (1080 × 1920).** The top 13% sits under the Reels bar. Below 65%, Meta's caption and button cover the image, so nothing important goes there. The right 120 px of the lower half sits under Meta's icons.
+
+**Shooting both.** Render 9:16 and crop 4:5 from the middle 70%.
+
+<Warning>
+  Never put a button in the image. Meta adds its own, and two buttons read as a mistake.
+</Warning>
+
+## The 1-2-3 read
+
+The eye should move through the ad in three beats. Each beat needs a reason to land and a reason to move on.
+
+| Beat | Its job | What makes the eye land |
+| --- | --- | --- |
+| **1. Product** | Stop the scroll | The brightest, sharpest, highest-contrast thing, with space around it |
+| **2. Headline** | Say the idea | The biggest type, in the calmest area |
+| **3. Offer or proof** | Give a reason to act | A smaller pocket with its own shape: a card, a badge, a price |
+
+Beat 3 sits nearest Meta's button, so the read ends at the tap.
+
+### Rhythm rules
+
+1. Each beat is a clear step quieter than the last, roughly half the size or weight. Two equal elements fight and the eye stalls.
+2. Gaps grow with rank. Headline to subhead is tight. Creative block to offer is a big gap. Closeness groups, distance separates.
+3. One axis. Stack the beats on a shared centre line or left edge.
+4. A simple path: a bounce, a Z or an L. At most one jump back, never a zigzag.
+5. Three stops, no fourth. Props and highlights stay quieter than beat 3.
+
+## Matched pairs share an image
+
+For a matched pair, both versions use the same image and differ only in the variable's words. That is what makes the result attributable.
+
+## Generation is quoted first
+
+Asking to generate returns a price. Nothing is spent at that point. It runs only when you confirm.
+
+Work out the count before confirming. It is roughly angles × products × awareness levels × personas × variations. Three angles across three awareness levels, two personas and three variations is 54 assets from one click.
+
+<Warning>
+  The wallet is a hard ceiling. A run that would exceed the balance is refused outright. It is never half-completed.
+</Warning>
+
+Renders take about two minutes.
+
+## Reviewing what came back
+
+Zoom in before judging. Text that looks wrong at thumbnail size is often fine close up.
+
+Then score it, comment on the region at fault, regenerate, and approve or reject.
+
+Comment on the region rather than describing the problem in general terms. A regeneration that knows where the problem is produces a targeted fix. One that only knows "make it better" rerolls the whole asset.
+
+Regeneration replaces the asset in place. There is no undo.
+
+## What goes wrong most
+
+- Text in a safe zone, so Meta crops the headline
+- A product scaled wrong because the shot was too tight
+- Four stops instead of three, so the eye stalls
+- Two elements at the same weight fighting for beat 1
+- A generated lineup where the variants drift in shape
+
+<Card title="Next: publishing" icon="arrow-right" href="/operator-wiki/performance/publishing">
+  Getting the test live in Meta, paused.
+</Card>
