@@ -1,0 +1,103 @@
+---
+title: "Generate the ads"
+sidebarTitle: "4. The ads"
+description: "Turning each brief into statics that stop the scroll and survive Meta's crop."
+public: true
+---
+
+import { LessonHeader, Check, LessonComplete } from "/snippets/course.jsx";
+import { SafeZones } from "/snippets/image-lab.jsx";
+
+<LessonHeader
+  module="03"
+  lesson="4"
+  minutes={8}
+  outcomes={[
+    "Decide a scene before you generate anything",
+    "Keep text out of the parts of the frame Meta covers",
+    "Work out what a generation run costs before confirming it",
+    "Give feedback a regeneration can act on",
+  ]}
+/>
+
+The brief says what the ad argues. Generation builds it. Each ad needs a scene decided first: shot type, setting, props, light, backdrop and the copy zone, plus where the product sits and how much of the frame it fills.
+
+{/* Add a walkthrough here once one is recorded: <Walkthrough id="..." title="Generating and reviewing a set of statics" /> */}
+
+## Product truth overrides the brief
+
+The model gets physical facts wrong unless the scene stops it.
+
+Models size a product to the hand holding it. A 25 mm pendant comes out at 35 to 50 mm in a tight hand shot, whatever the words say. For anything small, frame waist-up or wider and put a known object in the shot.
+
+If the identity lives on the label, use a front-facing close shot with the label readable. If there are several variants, use a lineup from a real group photo, because generated lineups drift in shape.
+
+## Meta covers part of every frame
+
+Text outside the safe area gets covered or cropped. These are not guidelines, they are where the interface physically sits.
+
+<SafeZones />
+
+## Three stops, no fourth
+
+The eye should move in three beats. The product stops the scroll, the headline says the idea, and the offer gives a reason to act. Beat three sits nearest Meta's button, so the read ends at the tap.
+
+Each beat lands a clear step quieter than the last, roughly half the size or weight. Two elements at the same weight fight, and the eye stalls on neither.
+
+## Count the cost before you confirm
+
+Asking to generate returns a price and spends nothing. It runs only when you confirm.
+
+Work the count out first. It is roughly angles × products × awareness levels × personas × variations. Three angles across three awareness levels, two personas and three variations is 54 assets from one click.
+
+<Warning>
+  The wallet is a hard ceiling. A run that would exceed the balance is refused outright. It is never
+  half-completed.
+</Warning>
+
+## Reviewing what came back
+
+Zoom in before judging. Text that looks wrong at thumbnail size is often fine close up.
+
+Then comment on the region at fault rather than describing the problem in general terms. A regeneration that knows where the problem is produces a targeted fix. One that only knows "make it better" rerolls the whole asset. Regeneration replaces the asset in place, and there is no undo.
+
+<Note>
+  For a matched pair, both versions use the same image and differ only in the variable's words. That
+  is what makes the result attributable to the thing you were testing.
+</Note>
+
+## Check yourself
+
+<Check
+  question="You are building a 9:16 for a pendant. Where does the headline go?"
+  options={[
+    "Across the bottom, nearest the button",
+    "In the top 10%, above the fold",
+    "Between the top 13% and the 65% line",
+    "Anywhere, since Meta scales the image to fit",
+  ]}
+  answer={2}
+  why="The top 13% sits under the Reels bar and everything below 65% is covered by the caption and button. The readable band is between them."
+/>
+
+<Check
+  question="A static came back with the product looking twice its real size. What most likely caused it?"
+  options={[
+    "The brief did not state the dimensions",
+    "The shot was too tight, so the model sized the product to the hand holding it",
+    "The wrong aspect ratio",
+    "The wallet ran out mid-render",
+  ]}
+  answer={1}
+  why="Stating dimensions does not fix it. The scene has to stop it: frame wider and put a known object in shot."
+/>
+
+<Card title="Full detail in the reference" icon="book" href="/operator-wiki/creative-testing/images">
+  Scene decisions, the rhythm rules, and what goes wrong most often.
+</Card>
+
+<LessonComplete
+  id="m3l4"
+  next="/kommerce-101/build-a-test/checkpoint"
+  nextTitle="Module checkpoint"
+/>

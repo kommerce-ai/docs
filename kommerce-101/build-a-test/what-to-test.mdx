@@ -1,0 +1,94 @@
+---
+title: "Decide what to test"
+sidebarTitle: "1. What to test"
+description: "Five decisions that happen before anyone writes a word of copy."
+public: true
+---
+
+import { LessonHeader, Check, LessonComplete } from "/snippets/course.jsx";
+import { AwarenessPicker } from "/snippets/brief-lab.jsx";
+import { FairTestCheck } from "/snippets/test-lab.jsx";
+
+<LessonHeader
+  module="03"
+  lesson="1"
+  minutes={8}
+  outcomes={[
+    "Name the single variable a test is changing",
+    "Pick the awareness level that decides what your opening line may say",
+    "Spot a test that cannot produce a readable answer",
+  ]}
+/>
+
+A test is a question with money behind it. Before anyone writes copy, five things get decided.
+
+| Decision | The rule |
+| --- | --- |
+| **Persona** | Exactly one. Not a blend. |
+| **Awareness** | Exactly one of five levels. |
+| **Angle** | The claim you are arguing. |
+| **Variable** | The one thing that differs between versions. |
+| **Mode** | Static, video, motion or creator. From evidence, not taste. |
+
+Get these wrong and everything downstream is wasted work. Beautiful ads that test nothing are the most expensive thing an account produces.
+
+## Awareness decides your first line
+
+How much the reader already knows decides what your headline is allowed to say. An ad opening on a discount speaks to someone already choosing between brands. Show it to someone who does not know she has the problem and it is noise.
+
+The reverse fails too. A long story about recognising a feeling wastes a reader who already has her card out.
+
+<AwarenessPicker />
+
+Most accounts are thick with Most Aware ads, because retargeting fills that in by itself. The gap is almost always higher up the funnel.
+
+<Warning>
+  Selecting several awareness levels in one test multiplies your output and your budget. Each level
+  is a separate idea and needs its own spend.
+</Warning>
+
+## One variable, or no answer
+
+If two things changed, the verdict cannot tell you which one moved the number. You spent the money and learned nothing.
+
+The harder trap is the unfair test. A test is only readable if both sides got a real chance.
+
+<FairTestCheck />
+
+The third rule is the one people break without noticing. If you believe in version A, it is easy to build B carelessly. B loses, and you conclude the idea was wrong when the execution was wrong. That mistake then goes into the account's learnings and misleads every test after it.
+
+## Check yourself
+
+<Check
+  question="You want to test whether a new angle beats the current best ad. The new angle also gets a brighter design and a stronger offer. What happens?"
+  options={[
+    "A fair test of the new angle",
+    "A test that cannot tell you what moved the number",
+    "A test of the offer only",
+    "Nothing, as long as both sides spend the same",
+  ]}
+  answer={1}
+  why="Three things changed at once. Whichever side wins, you cannot say which change did it, and the learning you record will be wrong."
+/>
+
+<Check
+  question="An account's ads are nearly all discount-led. Where is the gap most likely to be?"
+  options={[
+    "Most Aware, because that is what is working",
+    "Higher up the funnel, at Unaware and Problem Aware",
+    "There is no gap; discounts convert",
+    "Split evenly across all five levels",
+  ]}
+  answer={1}
+  why="Retargeting fills in Most Aware by itself. An account stacked with discount-led ads is usually only talking to people already choosing between brands."
+/>
+
+<Card title="Full detail in the reference" icon="book" href="/operator-wiki/creative-testing/strategy">
+  Personas, angles, copy mined from customer words, and the appeals that pull hardest.
+</Card>
+
+<LessonComplete
+  id="m3l1"
+  next="/kommerce-101/build-a-test/the-brief"
+  nextTitle="Write the brief"
+/>

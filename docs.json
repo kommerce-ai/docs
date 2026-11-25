@@ -19,14 +19,30 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Operator Wiki",
+        "tab": "Kommerce 101",
         "groups": [
           {
             "group": "Start here",
             "pages": [
-              "index"
+              "index",
+              "kommerce-101/overview"
             ]
           },
+          {
+            "group": "03 \u00b7 Build a test",
+            "pages": [
+              "kommerce-101/build-a-test/what-to-test",
+              "kommerce-101/build-a-test/the-brief",
+              "kommerce-101/build-a-test/the-test",
+              "kommerce-101/build-a-test/the-ads",
+              "kommerce-101/build-a-test/checkpoint"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
           {
             "group": "01 \u00b7 Client Success",
             "pages": [
@@ -81,6 +97,10 @@
     ]
   },
   "redirects": [
+    {
+      "source": "/kommerce-101",
+      "destination": "/kommerce-101/overview"
+    },
     {
       "source": "/operator-wiki",
       "destination": "/operator-wiki/client-success/onboarding"

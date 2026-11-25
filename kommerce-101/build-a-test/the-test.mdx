@@ -1,0 +1,98 @@
+---
+title: "Create the test"
+sidebarTitle: "3. The test"
+description: "Turning approved briefs into a test with versions, a budget and a bar."
+public: true
+---
+
+import { LessonHeader, Check, LessonComplete } from "/snippets/course.jsx";
+import { TestDesigner } from "/snippets/test-lab.jsx";
+
+<LessonHeader
+  module="03"
+  lesson="3"
+  minutes={10}
+  outcomes={[
+    "Say what a test will cost before you create it",
+    "Choose a strictness and defend the choice",
+    "Avoid the budget mistake that kills a test before it answers anything",
+  ]}
+/>
+
+The brief says what you want to learn. The test is how Kommerce runs it.
+
+Before creating anything, ask Kommerce for the test idea. It returns the bar, the budget and the stop rule. Use those numbers in the plan rather than inventing your own. You tell it the goal, the persona, the awareness level and how many versions you want.
+
+{/* Add a walkthrough here once one is recorded: <Walkthrough id="..." title="Creating a test from two briefs" /> */}
+
+## Versions are ideas, and ideas cost money
+
+Each version gets its own ad set and its own budget. Different executions of one version share that budget.
+
+So five executions of one angle cost one budget. Five angles cost five. This is the thing people get wrong when they scope a test, and it is why a test plan grows expensive without anyone deciding that it should.
+
+<TestDesigner />
+
+## The budget trap
+
+Set lifetime budgets per ad set. Never a shared campaign budget.
+
+Meta moves money toward whatever looks best early. That is Meta doing its job well, and it is exactly wrong for a test. You are buying information. Meta is buying results. A shared budget starves one side before it has produced a verdict, and you pay for an answer you never get.
+
+## Strictness
+
+Cautious, balanced or bold. It sets how much evidence Kommerce wants before it acts.
+
+Bold calls things sooner and is wrong more often. Cautious spends more before deciding. Pick bold when creative is cheap and you want throughput. Pick cautious when each test costs real money to produce, or when the client will ask you to defend the call.
+
+## The order of operations
+
+<Steps>
+  <Step title="Check the test idea">
+    Get the bar, budget and stop rule before writing them into the plan.
+  </Step>
+  <Step title="Show the versions, budget and bar to whoever owns the money">
+    This is a decision, not a formality.
+  </Step>
+  <Step title="Create the test">
+    It is a draft. Nothing is running.
+  </Step>
+  <Step title="Write a brief per version">
+    Each one carries what it says and what it shows.
+  </Step>
+  <Step title="Stop there">
+    Generating creative and publishing are separate, deliberate steps.
+  </Step>
+</Steps>
+
+<Note>
+  Kommerce stores one persona and one awareness level per test. If a test genuinely needs two, split
+  it into two tests, or record the primary one and note the second in the hypothesis.
+</Note>
+
+## Check yourself
+
+<Check
+  question="Break-even is $40 an order and you want to test 3 ideas. Roughly what are you committing?"
+  options={["$120", "$300", "$40 per day", "Whatever Meta decides"]}
+  answer={1}
+  why="About 2.5x break-even funds each idea, so 3 × $100 is around $300, spread over a six-day window. Ideas multiply budget one for one."
+/>
+
+<Check
+  question="Why not put the test on a shared campaign budget?"
+  options={[
+    "It costs more",
+    "Meta will move money to whichever side looks best early and starve the other",
+    "Kommerce cannot read shared budgets",
+    "It is slower to set up",
+  ]}
+  answer={1}
+  why="Meta optimises for results, not for information. One side gets starved before it produces a verdict, so you pay for an answer you never receive."
+/>
+
+<Card title="Full detail in the reference" icon="book" href="/operator-wiki/creative-testing/tests">
+  Every field a test holds, ad naming, and pointing a test at ad sets that already run.
+</Card>
+
+<LessonComplete id="m3l3" next="/kommerce-101/build-a-test/the-ads" nextTitle="Generate the ads" />
