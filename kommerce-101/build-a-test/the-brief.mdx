@@ -1,0 +1,99 @@
+---
+title: "Write the brief"
+sidebarTitle: "2. The brief"
+description: "The brief decides what a test can prove. Everything after it is execution."
+public: true
+---
+
+import { LessonHeader, Check, LessonComplete } from "/snippets/course.jsx";
+import { HypothesisBuilder, EvidenceChecker, LeverPicker, BriefQA } from "/snippets/brief-lab.jsx";
+
+<LessonHeader
+  module="03"
+  lesson="2"
+  minutes={12}
+  outcomes={[
+    "Write a hypothesis that could turn out to be wrong",
+    "Write an evidence row that survives review",
+    "Assign a different lever to each version",
+    "Clear the QA list before the plan leaves your hands",
+  ]}
+/>
+
+The brief states what each idea is testing, so that when the verdict arrives you know what was proven. Write it badly and a weak creative makes the test read as a loss for the idea, when it was really a loss for the execution.
+
+Before writing a word, read what the account already knows: the brand, the learnings, the patterns, past tests, the account numbers, and what competitors keep running.
+
+Every claim that reaches the brief carries a tag saying where it came from. A line with no tag does not belong in the hypothesis or the evidence.
+
+{/* Add a walkthrough here once one is recorded: <Walkthrough id="..." title="Writing a brief end to end" /> */}
+
+## The hypothesis
+
+One sentence, under 600 characters, in a fixed shape.
+
+<HypothesisBuilder />
+
+Most people write the first four parts and stop. The last clause is the one that makes the test honest, because it forces you to say what would argue against you before the money goes out. If you cannot find any counter-evidence, you have not looked.
+
+## Evidence rows
+
+Evidence is a fact with a number and a spend figure attached, tagged with where it came from, and weighted by how much it can carry.
+
+<EvidenceChecker />
+
+Strength runs Strong, Likely, Leaning, Directional, Thin, Against. Under about ten orders, nothing is better than directional, however good the number looks.
+
+## Levers
+
+A lever is how a version argues its angle: Offer, Logic, Social, Emotion or Novelty. Record it on every creative.
+
+<LeverPicker />
+
+Each hook inside a version should pull a different lever too, unless the lever itself is what you are testing. Ads in one ad set should not be paraphrases of each other.
+
+## The creative row
+
+Each ad gets a row carrying the Meta headline with its character count, the button, the composition, the on-image text, the lever, a real reference, and the primary text.
+
+Describe a composition a designer could execute without guessing. Describe the idea, not render settings.
+
+<Warning>
+  Never invent an ad reference. Link to a real ad in the Meta Ad Library or your saved research, or
+  leave the field empty.
+</Warning>
+
+## Clear the QA before it goes anywhere
+
+<BriefQA />
+
+## Check yourself
+
+<Check
+  question="Which of these is an evidence row?"
+  options={[
+    "Offer-led statics convert well for this brand",
+    "PAT-9 — 4 purchases at $32.08 on $128 spend — directional",
+    "The client says customers love the gift ladder",
+    "Competitors are running a lot of offer ads",
+  ]}
+  answer={1}
+  why="It carries a tag, a real number, the spend behind it, and an honest weight. The others are opinions with no source and no spend."
+/>
+
+<Check
+  question="You have 6 orders at an excellent cost per order. What is the strongest label you can put on it?"
+  options={["Strong", "Likely", "Directional", "Against"]}
+  answer={2}
+  why="Under about ten orders, nothing beats directional. Labelling thin data as strong is how a bad learning gets into the account and misleads every test after it."
+/>
+
+<Card title="Full detail in the reference" icon="book" href="/operator-wiki/creative-testing/briefs">
+  The whole plan shape, the quality bar, and what creator work needs on top.
+</Card>
+
+<LessonComplete
+  id="m3l2"
+  next="/kommerce-101/build-a-test/the-test"
+  nextTitle="Create the test"
+/>

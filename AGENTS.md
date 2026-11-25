@@ -14,7 +14,7 @@
 ## Terminology
 
 - **Department** — the Kommerce system as a whole. It is "installed", not "signed up for".
-- **Operator** — the party running accounts on the brand's behalf, and also the individual human assigned to an account. Not "agency", "account manager" or "rep". The operator side is documented at `/operator-wiki`, the brand side at `/brands-wiki`.
+- **Operator** — the party running accounts on the brand's behalf, and also the individual human assigned to an account. Not "agency", "account manager" or "rep". Operator material lives under `/operator-wiki` (the Reference tab) and `/kommerce-101` (the course tab). The brands wiki was retired; its URLs redirect.
 - **Do not say "agency"** in published copy. The one exception is the product's own control labelled **Copy agency ID** in the Meta connection flow — quote that label verbatim, because renaming it in the docs would contradict what the user sees on screen. If the product UI is ever renamed, drop the exception.
 - **The lifecycle** — client onboarding, audit and research, creative testing, scaling. This is how the operator wiki is organised; follow it rather than inventing other groupings.
 - **Angle** — a claim, audience, or positioning hypothesis worth testing.
@@ -38,6 +38,32 @@ The operator wiki is read by **media buyers and account managers, not engineers*
 - Code formatting for file names, commands, paths, and code references
 - No hype adjectives ("revolutionary", "seamless", "cutting-edge"). The source site is plain and direct — match it.
 
+## Kommerce 101 (the course tab)
+
+The site has two tabs. **Kommerce 101** is a sequenced course; **Reference** is the 24-page wiki.
+
+- **Lessons stay thin.** A lesson carries learning outcomes, a short teaching core, an interactive piece, two knowledge checks and a link into the reference page that holds the full prose. Never copy reference prose into a lesson — the reference is canonical, and duplicated prose drifts.
+- Every module ends in a **checkpoint**: something the reader does on the demo brand, never on a live client account.
+- Lesson ids are `m<module>l<lesson>` (`m3l2`). They key the progress object and must not be renamed once published, or readers lose their ticks.
+- Progress lives in `localStorage` under `kommerce101.progress.v1`, checkpoints under `kommerce101.checkpoint.m<module>`. Per-device, invisible to anyone else. Only a submitted checkpoint is a record.
+- `LessonComplete` carries a hardcoded `TOTAL_LESSONS`. Raise it when a module lands.
+
+### Writing React components for Mintlify
+
+Components live in `/snippets/*.jsx` and are imported by name into MDX.
+
+- **Every component must be self-contained.** Mintlify compiles each exported component in isolation, so a component cannot reference anything declared at the top of its file — not a helper, not a constant, **not even when that binding is itself exported**. It compiles, the page returns 200, and then it dies in the browser with `x is not defined`. Repeat the constant inside each component that needs it.
+- Hooks (`useState`, `useEffect`, and the rest) are pre-injected. Do not import them.
+- Named exports only. No default exports, no JSON imports, no `React.lazy`.
+- npm packages need an Enterprise plan. Everything here is written to avoid them.
+- Write Tailwind class names out in full. Mintlify only generates CSS for classes it can see in the source, so `` `bg-${colour}-500` `` produces nothing.
+- Wrap `localStorage` reads and writes in `try`/`catch`, and render a fixed-height placeholder until the first read lands, so the UI never flips in front of the reader.
+- **A 200 response does not mean the page works.** Component failures are client-side. Load the page in a browser and read the console before calling it done.
+
+### Walkthrough videos
+
+Use `<Walkthrough id="..." title="..." />` from `/snippets/course.jsx` for Loom, or add `source="youtube"`. Pass only the video id. The screenshot rules below apply to every frame of a recording, including browser chrome and anything visible in a tab title.
+
 ## Screenshots
 
 Full workflow and the outstanding shot list live in `images/CAPTURE-LIST.md` (not published).
@@ -55,6 +81,6 @@ Full workflow and the outstanding shot list live in `images/CAPTURE-LIST.md` (no
 - **Do not publish pricing.** Pricing depends on scope and is set on the call by design. Do not infer, estimate, or reproduce numbers.
 - **Do not invent metrics, results, or case studies.** No CAC figures, ROAS claims, or client names unless supplied and approved.
 - **Do not document an SDK, CLI, or self-serve signup.** None exist; onboarding runs through a call.
-- **The MCP connection is real and documented** at `/operator-wiki/mcp/overview`. It is operator-only — brand logins are refused — so never tell a client they can connect.
+- **The MCP connection is real and documented** at `/operator-wiki/resources/mcp`. It is operator-only — brand logins are refused — so never tell a client they can connect.
 - Do not add integrations to the documented stack (Shopify, Meta, Google, TikTok, Slack, ClickUp) without confirmation.
 - Verify claims against [usekommerce.com](https://usekommerce.com) before publishing. When a detail cannot be verified, leave it out rather than hedging in public copy.
